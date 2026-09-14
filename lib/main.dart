@@ -1,4 +1,4 @@
-import 'package:cv/cubits/language_cubit.dart';
+import 'package:cv/cubits/language/language_cubit.dart';
 import 'package:cv/service_locator.dart';
 import 'package:cv/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +38,13 @@ class _MyAppState extends State<MyApp> {
       create: (context) => languageCubit,
       child: BlocBuilder<LanguageCubit, LanguageState>(
         builder: (context, state) {
+          final String languageKey = state.language.langCode;
           return MaterialApp.router(
             theme: appTheme(context),
             title: 'CV',
             debugShowCheckedModeBanner: false,
             routerConfig: appRouter.config(),
+            locale: Locale.fromSubtags(languageCode: languageKey),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
           );

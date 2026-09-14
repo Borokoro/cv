@@ -98,11 +98,221 @@ abstract class AppLocalizations {
     Locale('pl'),
   ];
 
-  /// No description provided for @aboutMe.
+  /// No description provided for @introductionPart1.
   ///
   /// In en, this message translates to:
-  /// **'About m'**
-  String get aboutMe;
+  /// **'I am a Computer Science graduate from'**
+  String get introductionPart1;
+
+  /// No description provided for @university.
+  ///
+  /// In en, this message translates to:
+  /// **'Lublin University of Technology'**
+  String get university;
+
+  /// No description provided for @introductionPart2.
+  ///
+  /// In en, this message translates to:
+  /// **'with a strong interest in\nsoftware development. I have experience in building cross-platform applications using Flutter\nframework and I am eager to expand my skills by learning new technologies. I am motivated by\ncontinuous learning and gaining practical experience, with the goal of constantly improving my\ntechnical skills. I look forward to collaborating with new people, taking on new challenges, and\ngrowing as a software developer.'**
+  String get introductionPart2;
+
+  /// No description provided for @workExperience.
+  ///
+  /// In en, this message translates to:
+  /// **'Work experience'**
+  String get workExperience;
+
+  /// No description provided for @polytechnicsInternship.
+  ///
+  /// In en, this message translates to:
+  /// **'Polytechnicʼs Internship'**
+  String get polytechnicsInternship;
+
+  /// No description provided for @lublin.
+  ///
+  /// In en, this message translates to:
+  /// **'Lublin'**
+  String get lublin;
+
+  /// No description provided for @polytechnicsInternDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Mandatory internship organized by polytechnic with strong focus on Flutter.'**
+  String get polytechnicsInternDetails;
+
+  /// No description provided for @flutter.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter'**
+  String get flutter;
+
+  /// No description provided for @intern.
+  ///
+  /// In en, this message translates to:
+  /// **'Intern'**
+  String get intern;
+
+  /// No description provided for @paidwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Paidwork'**
+  String get paidwork;
+
+  /// No description provided for @paidworkInternDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter internship at Paidwork company.'**
+  String get paidworkInternDetails;
+
+  /// No description provided for @ballSquad.
+  ///
+  /// In en, this message translates to:
+  /// **'Ball Squad'**
+  String get ballSquad;
+
+  /// No description provided for @ballSquadInternDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter internship at Ball Squad Company.'**
+  String get ballSquadInternDetails;
+
+  /// No description provided for @warsaw.
+  ///
+  /// In en, this message translates to:
+  /// **'Warsaw'**
+  String get warsaw;
+
+  /// No description provided for @junior.
+  ///
+  /// In en, this message translates to:
+  /// **'Junior'**
+  String get junior;
+
+  /// No description provided for @ballSquadJuniorDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Junior Flutter Developer at Ball Squad Company.'**
+  String get ballSquadJuniorDetails;
+
+  /// No description provided for @educationAndQualifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Education and Qualifications'**
+  String get educationAndQualifications;
+
+  /// No description provided for @bachelorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bachelor'**
+  String get bachelorTitle;
+
+  /// No description provided for @z.
+  ///
+  /// In en, this message translates to:
+  /// **'of'**
+  String get z;
+
+  /// No description provided for @computerScience.
+  ///
+  /// In en, this message translates to:
+  /// **'Computer Science'**
+  String get computerScience;
+
+  /// No description provided for @masterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Master'**
+  String get masterTitle;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get phoneNumber;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @dateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get dateOfBirth;
+
+  /// No description provided for @placeOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Place of birth'**
+  String get placeOfBirth;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @nationality.
+  ///
+  /// In en, this message translates to:
+  /// **'Nationality'**
+  String get nationality;
+
+  /// No description provided for @github.
+  ///
+  /// In en, this message translates to:
+  /// **'Github'**
+  String get github;
+
+  /// No description provided for @linkedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'LinkedIn'**
+  String get linkedIn;
+
+  /// No description provided for @hetmanska.
+  ///
+  /// In en, this message translates to:
+  /// **'Hetmanska'**
+  String get hetmanska;
+
+  /// No description provided for @poland.
+  ///
+  /// In en, this message translates to:
+  /// **'Poland'**
+  String get poland;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @polish.
+  ///
+  /// In en, this message translates to:
+  /// **'Polish'**
+  String get polish;
+
+  /// No description provided for @personal.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal'**
+  String get personal;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,4 @@
-import 'package:cv/cubits/language_cubit.dart';
+import 'package:cv/cubits/language/language_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt serviceLocator = GetIt.instance;

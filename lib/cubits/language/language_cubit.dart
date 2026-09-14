@@ -16,16 +16,8 @@ class LanguageCubit extends Cubit<LanguageState> {
     }
   }
 
-  Language getLanguageKey(String langCode) {
-    return Language.fromLangCode(langCode);
-  }
-
-  Language getCurrentLanguage() {
-    return state.languageCode;
-  }
-
-  void switchLanguage({required Language languageKey}) {
-    emit(SwitchingLanguage(languageKey));
-    emit(SwitchedLanguage(languageKey));
+  void switchLanguage({required Language language}) {
+    emit(SwitchingLanguage(language));
+    emit(SwitchedLanguage(language));
   }
 }
