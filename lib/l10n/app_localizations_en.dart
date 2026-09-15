@@ -35,7 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get flutter => 'Flutter';
 
   @override
-  String get intern => 'Intern';
+  String get flutterIntern => 'Flutter Intern';
 
   @override
   String get paidwork => 'Paidwork';
@@ -54,7 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get warsaw => 'Warsaw';
 
   @override
-  String get junior => 'Junior';
+  String get flutterJunior => 'Flutter Junior';
 
   @override
   String get ballSquadJuniorDetails =>
@@ -64,16 +64,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get educationAndQualifications => 'Education and Qualifications';
 
   @override
-  String get bachelorTitle => 'Bachelor';
+  String get bachelorTitle => 'Bachelor of Computer Science';
 
   @override
-  String get z => 'of';
-
-  @override
-  String get computerScience => 'Computer Science';
-
-  @override
-  String get masterTitle => 'Master';
+  String get masterTitle => 'Master of Computer Science';
 
   @override
   String get address => 'Address';
@@ -119,4 +113,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get personal => 'Personal';
+
+  @override
+  String get languages => 'Languages';
+
+  @override
+  String get present => 'Present';
 }

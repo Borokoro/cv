@@ -146,11 +146,11 @@ abstract class AppLocalizations {
   /// **'Flutter'**
   String get flutter;
 
-  /// No description provided for @intern.
+  /// No description provided for @flutterIntern.
   ///
   /// In en, this message translates to:
-  /// **'Intern'**
-  String get intern;
+  /// **'Flutter Intern'**
+  String get flutterIntern;
 
   /// No description provided for @paidwork.
   ///
@@ -182,11 +182,11 @@ abstract class AppLocalizations {
   /// **'Warsaw'**
   String get warsaw;
 
-  /// No description provided for @junior.
+  /// No description provided for @flutterJunior.
   ///
   /// In en, this message translates to:
-  /// **'Junior'**
-  String get junior;
+  /// **'Flutter Junior'**
+  String get flutterJunior;
 
   /// No description provided for @ballSquadJuniorDetails.
   ///
@@ -203,25 +203,13 @@ abstract class AppLocalizations {
   /// No description provided for @bachelorTitle.
   ///
   /// In en, this message translates to:
-  /// **'Bachelor'**
+  /// **'Bachelor of Computer Science'**
   String get bachelorTitle;
-
-  /// No description provided for @z.
-  ///
-  /// In en, this message translates to:
-  /// **'of'**
-  String get z;
-
-  /// No description provided for @computerScience.
-  ///
-  /// In en, this message translates to:
-  /// **'Computer Science'**
-  String get computerScience;
 
   /// No description provided for @masterTitle.
   ///
   /// In en, this message translates to:
-  /// **'Master'**
+  /// **'Master of Computer Science'**
   String get masterTitle;
 
   /// No description provided for @address.
@@ -313,6 +301,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Personal'**
   String get personal;
+
+  /// No description provided for @languages.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get languages;
+
+  /// No description provided for @present.
+  ///
+  /// In en, this message translates to:
+  /// **'Present'**
+  String get present;
 }
 
 class _AppLocalizationsDelegate

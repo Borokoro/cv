@@ -20,4 +20,10 @@ extension ElementsSpacingExtension on List<Widget> {
   List<Widget> withVerticalElementsSpacing(double spacing) {
     return _wrapWithWidgetAfterEach(SizedBox(height: spacing));
   }
+
+  List<Widget> withDivider(Widget divider) {
+    List<Widget> result = [];
+    result = _wrapWithWidgetAfterEach(divider);
+    return result;
+  }
 }

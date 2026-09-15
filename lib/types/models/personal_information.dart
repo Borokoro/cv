@@ -38,7 +38,7 @@ class PersonalInformation {
       phoneNumber: PersonalInformationConstants.phoneNumber,
       email: PersonalInformationConstants.email,
       formattedDateOfBirth: FormattedUtcDateTime(
-        AppConstants.dateFormatDayMonthYear,
+        AppConstants.dateFormatDayMonthYearDashed,
         PersonalInformationConstants.dateOfBirth,
       ).toString(),
       placeOfBirth: localizations.lublin,

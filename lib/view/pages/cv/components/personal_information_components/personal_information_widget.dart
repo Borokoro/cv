@@ -1,3 +1,5 @@
+import 'package:cv/constants/app_constants.dart';
+import 'package:cv/constants/color_constants.dart';
 import 'package:cv/utils/elements_spacing_extension.dart';
 import 'package:cv/utils/text_theme_extension.dart';
 import 'package:flutter/gestures.dart';
@@ -51,10 +53,17 @@ class PersonalInformationWidget extends StatelessWidget {
     if (isDescriptionLink) {
       return RichText(
         text: TextSpan(
-          text: description,
-          style: textTheme.fontRegular,
-          recognizer: TapGestureRecognizer()
-            ..onTap = () => launchUrl(Uri(scheme: isDescriptionEmail ? 'mailto' : null, path: description)),
+          children: [
+            TextSpan(
+              text: description,
+              style: textTheme.fontRegular.copyWith(
+                color: ColorConstants.linkBlue,
+                fontFamily: AppConstants.defaultFont,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launchUrl(Uri(scheme: isDescriptionEmail ? 'mailto' : null, path: description)),
+            ),
+          ],
         ),
       );
     } else {
