@@ -17,11 +17,6 @@ class FormattedUtcDateTime extends DateTime {
           dateTime.microsecond);
 
   @override
-  String toIso8601String() {
-    return _dateFormat.format(this);
-  }
-
-  @override
   String toString() {
     return _dateFormat.format(this);
   }

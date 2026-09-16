@@ -41,20 +41,23 @@ class CvPage extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Column(
-      children: [
-        NameAndPhotoWidget(),
-        InformationWrapper(
-          title: localizations.personal,
-          body: _getPersonalInformationColumn(context),
-          textStyle: textTheme.fontRegularBold,
-        ),
-        InformationWrapper(
-          title: localizations.languages,
-          body: _getLanguagesColumn(context),
-          textStyle: textTheme.fontRegularBold,
-        ),
-      ].withVerticalElementsSpacing(60),
+    return Container(
+      color: ColorConstants.brightGrey,
+      child: Column(
+        children: [
+          NameAndPhotoWidget(),
+          InformationWrapper(
+            title: localizations.personal,
+            body: _getPersonalInformationColumn(context),
+            textStyle: textTheme.fontRegularBold,
+          ),
+          InformationWrapper(
+            title: localizations.languages,
+            body: _getLanguagesColumn(context),
+            textStyle: textTheme.fontRegularBold,
+          ),
+        ].withVerticalElementsSpacing(60),
+      ),
     );
   }
 
@@ -122,17 +125,20 @@ class CvPage extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Column(
-      children: [
-        _getAboutMe(context),
-        InformationWrapper(
-          title: localizations.workExperience,
-          body: _getWorkExperience(context),
-          textStyle: textTheme.fontHeader,
-        ),
-        _getEducation(context),
-        _getSkill(),
-      ].withDivider(const Divider()).withVerticalElementsSpacing(20),
+    return Container(
+      color: ColorConstants.white,
+      child: Column(
+        children: [
+          _getAboutMe(context),
+          InformationWrapper(
+            title: localizations.workExperience,
+            body: _getWorkExperience(context),
+            textStyle: textTheme.fontHeader,
+          ),
+          _getEducation(context),
+          _getSkill(),
+        ].withDivider(const Divider()).withVerticalElementsSpacing(20),
+      ),
     );
   }
 
@@ -149,7 +155,7 @@ class CvPage extends StatelessWidget {
           ),
           TextSpan(
             text: localizations.university,
-            style: textTheme.fontRegular.copyWith(
+            style: textTheme.fontRegularBold.copyWith(
               color: ColorConstants.linkBlue,
               fontFamily: AppConstants.defaultFont,
               decoration: TextDecoration.underline,

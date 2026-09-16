@@ -1,11 +1,13 @@
 import 'package:cv/constants/app_constants.dart';
 import 'package:cv/constants/color_constants.dart';
+import 'package:cv/cubits/language/language_cubit.dart';
 import 'package:cv/l10n/app_localizations.dart';
 import 'package:cv/utils/elements_spacing_extension.dart';
 import 'package:cv/utils/formatted_utc_date_time.dart';
 import 'package:cv/utils/string_utils.dart';
 import 'package:cv/utils/text_theme_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExperienceWidget extends StatelessWidget {
   const ExperienceWidget({
@@ -25,10 +27,14 @@ class ExperienceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [_getExperienceDescription(context), _getExperienceDate(context)],
+    return BlocBuilder<LanguageCubit, LanguageState>(
+      builder: (context, state) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [_getExperienceDescription(context), _getExperienceDate(context, state)],
+        );
+      }
     );
   }
 
@@ -60,13 +66,13 @@ class ExperienceWidget extends StatelessWidget {
     return Text(description!, style: textTheme.fontRegular);
   }
 
-  Widget _getExperienceDate(BuildContext context) {
+  Widget _getExperienceDate(BuildContext context, LanguageState state) {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    final String formattedStartDate = FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, startDate).toString();
+    final String formattedStartDate = FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, startDate, locale: "en_US").toString();
     final String formattedEndDate = endDate != null
-        ? FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, endDate!).toString()
+        ? FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, endDate!, locale: state.language.countryCode).toString()
         : localizations.present;
 
     return Text(
