@@ -6,5 +6,6 @@ ThemeData appTheme(BuildContext context) {
   final ThemeData themeData = ThemeData.light(useMaterial3: true);
   return themeData.copyWith(
     textTheme: themeData.textTheme.apply(fontFamily: AppConstants.defaultFont, bodyColor: ColorConstants.black),
+    scaffoldBackgroundColor: ColorConstants.white,
   );
 }

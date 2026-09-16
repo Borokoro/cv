@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cv/constants/app_constants.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/icon_constants.dart';
+import 'package:cv/constants/style_constants.dart';
 import 'package:cv/l10n/app_localizations.dart';
 import 'package:cv/types/enum/skill.dart';
 import 'package:cv/types/models/personal_information.dart';
@@ -29,11 +30,14 @@ class CvPage extends StatelessWidget {
   }
 
   Widget _getCVPageBody(BuildContext context) {
-    return Row(
-      children: [
-        Flexible(flex: 1, child: _getPersonalInformationBody(context)),
-        Flexible(flex: 3, child: _getExperienceBody(context)),
-      ],
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Flexible(flex: 1, child: _getPersonalInformationBody(context)),
+          Flexible(flex: 3, child: _getExperienceBody(context)),
+        ],
+      ),
     );
   }
 
@@ -46,17 +50,23 @@ class CvPage extends StatelessWidget {
       child: Column(
         children: [
           NameAndPhotoWidget(),
-          InformationWrapper(
-            title: localizations.personal,
-            body: _getPersonalInformationColumn(context),
-            textStyle: textTheme.fontRegularBold,
+          Padding(
+            padding: StyleConstants.edgeInsetsH40,
+            child: InformationWrapper(
+              title: localizations.personal,
+              body: _getPersonalInformationColumn(context),
+              textStyle: textTheme.fontHeader,
+            ),
           ),
-          InformationWrapper(
-            title: localizations.languages,
-            body: _getLanguagesColumn(context),
-            textStyle: textTheme.fontRegularBold,
+          Padding(
+            padding: StyleConstants.edgeInsetsH40,
+            child: InformationWrapper(
+              title: localizations.languages,
+              body: _getLanguagesColumn(context),
+              textStyle: textTheme.fontHeader,
+            ),
           ),
-        ].withVerticalElementsSpacing(60),
+        ].withVerticalElementsSpacing(40),
       ),
     );
   }
@@ -100,24 +110,23 @@ class CvPage extends StatelessWidget {
           title: localizations.nationality,
           description: pi.nationality,
         ),
-        PersonalInformationWidget(icon: IconConstants.github, title: localizations.github, description: pi.github),
+        PersonalInformationWidget(icon: IconConstants.github, title: localizations.github, description: pi.github, isDescriptionLink: true,),
         PersonalInformationWidget(
           icon: IconConstants.linkedin,
           title: localizations.linkedIn,
           description: pi.linkedIn,
+          isDescriptionLink: true,
         ),
-      ],
+      ].withVerticalElementsSpacing(15),
     );
   }
 
   Widget _getLanguagesColumn(BuildContext context) {
-    final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.spaceBetween;
-
     return Column(
       children: [
-        SkillWidget(skill: Skill.english, mainAxisAlignment: mainAxisAlignment),
-        SkillWidget(skill: Skill.polish, mainAxisAlignment: mainAxisAlignment),
-      ],
+        SkillWidget(skill: Skill.english),
+        SkillWidget(skill: Skill.polish),
+      ].withVerticalElementsSpacing(15),
     );
   }
 
@@ -126,8 +135,10 @@ class CvPage extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
+      padding: StyleConstants.edgeInsetsH40V40,
       color: ColorConstants.white,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _getAboutMe(context),
           InformationWrapper(
@@ -135,7 +146,11 @@ class CvPage extends StatelessWidget {
             body: _getWorkExperience(context),
             textStyle: textTheme.fontHeader,
           ),
-          _getEducation(context),
+          InformationWrapper(
+            title: localizations.educationAndQualifications,
+            body: _getEducation(context),
+            textStyle: textTheme.fontHeader,
+          ),
           _getSkill(),
         ].withDivider(const Divider()).withVerticalElementsSpacing(20),
       ),
@@ -160,7 +175,7 @@ class CvPage extends StatelessWidget {
               fontFamily: AppConstants.defaultFont,
               decoration: TextDecoration.underline,
             ),
-            recognizer: TapGestureRecognizer()..onTap = () => launchUrl(Uri(path: AppConstants.universityLink)),
+            recognizer: TapGestureRecognizer()..onTap = () => launchUrl(Uri(scheme: "https", path: StringUtils.removeHttpsFromLink(AppConstants.universityLink))),
           ),
           TextSpan(
             text: StringUtils.space + localizations.introductionPart2,
@@ -175,6 +190,7 @@ class CvPage extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ExperienceWidget(
           startDate: DateTime.utc(2022, 7),
@@ -209,7 +225,7 @@ class CvPage extends StatelessWidget {
   }
 
   String _getPlaceString(String place, String city) {
-    return place + StringUtils.comma + StringUtils.space + city;
+    return StringUtils.addCommaAtEnd(place) + city;
   }
 
   Widget _getEducation(BuildContext context) {
@@ -238,8 +254,8 @@ class CvPage extends StatelessWidget {
 
     return Column(
       children: [
-        for (Skill skill in skills) ...{SkillWidget(skill: skill, spacing: 20)},
-      ].withVerticalElementsSpacing(10),
+        for (Skill skill in skills) ...{SkillWidget(skill: skill, width: 500)},
+      ].withVerticalElementsSpacing(15),
     );
   }
 }

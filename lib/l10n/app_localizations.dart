@@ -113,7 +113,7 @@ abstract class AppLocalizations {
   /// No description provided for @introductionPart2.
   ///
   /// In en, this message translates to:
-  /// **'with a strong interest in\nsoftware development. I have experience in building cross-platform applications using Flutter\nframework and I am eager to expand my skills by learning new technologies. I am motivated by\ncontinuous learning and gaining practical experience, with the goal of constantly improving my\ntechnical skills. I look forward to collaborating with new people, taking on new challenges, and\ngrowing as a software developer.'**
+  /// **'with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.'**
   String get introductionPart2;
 
   /// No description provided for @workExperience.

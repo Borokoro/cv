@@ -30,9 +30,8 @@ class ExperienceWidget extends StatelessWidget {
     return BlocBuilder<LanguageCubit, LanguageState>(
       builder: (context, state) {
         return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [_getExperienceDescription(context), _getExperienceDate(context, state)],
+          children: [Expanded(child: _getExperienceDescription(context)), _getExperienceDate(context, state)],
         );
       }
     );
@@ -40,10 +39,11 @@ class ExperienceWidget extends StatelessWidget {
 
   Widget _getExperienceDescription(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _getTitle(context),
         _getPlace(context),
-        if (description != null) ...{_getDescription(context), SizedBox(height: 5)},
+        if (description != null) ...{SizedBox(height: 5), _getDescription(context), SizedBox(height: 5)},
       ].withVerticalElementsSpacing(5),
     );
   }
@@ -70,7 +70,7 @@ class ExperienceWidget extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    final String formattedStartDate = FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, startDate, locale: "en_US").toString();
+    final String formattedStartDate = FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, startDate, locale: state.language.countryCode).toString();
     final String formattedEndDate = endDate != null
         ? FormattedUtcDateTime(AppConstants.dateFormatMonthTextYear, endDate!, locale: state.language.countryCode).toString()
         : localizations.present;

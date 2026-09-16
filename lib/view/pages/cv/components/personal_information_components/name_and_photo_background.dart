@@ -5,7 +5,7 @@ class NameAndPhotoBackground extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final double width = size.width;
     final double height = size.height;
-    
+
     final Paint topPaint = Paint()
       ..color = const Color(0xFF565B80);
 
@@ -25,33 +25,37 @@ class NameAndPhotoBackground extends CustomPainter {
       width * 0.18,
       height * 0.575,
       width * 0.38,
-      height * 0.635,
+      height * 0.665,
       width * 0.50,
-      height * 0.645,
+      height * 0.685,
     );
 
     darkPath.cubicTo(
       width * 0.62,
-      height * 0.635,
+      height * 0.665,
       width * 0.82,
       height * 0.575,
       width,
       height * 0.485,
     );
 
-    darkPath.lineTo(width, height * 0.555);
+    darkPath.lineTo(
+      width,
+      height * 0.555,
+    );
+
     darkPath.cubicTo(
       width * 0.80,
       height * 0.665,
       width * 0.61,
-      height * 0.715,
+      height * 0.755,
       width * 0.50,
-      height * 0.725,
+      height * 0.765,
     );
 
     darkPath.cubicTo(
       width * 0.39,
-      height * 0.715,
+      height * 0.755,
       width * 0.20,
       height * 0.665,
       0,
@@ -67,20 +71,23 @@ class NameAndPhotoBackground extends CustomPainter {
 
     final Path bottomPath = Path();
 
-    bottomPath.moveTo(0, height * 0.555);
+    bottomPath.moveTo(
+      0,
+      height * 0.555,
+    );
 
     bottomPath.cubicTo(
       width * 0.20,
       height * 0.665,
       width * 0.39,
-      height * 0.715,
+      height * 0.755,
       width * 0.50,
-      height * 0.725,
+      height * 0.765,
     );
 
     bottomPath.cubicTo(
       width * 0.61,
-      height * 0.715,
+      height * 0.755,
       width * 0.80,
       height * 0.665,
       width,

@@ -6,22 +6,24 @@ import 'package:cv/utils/text_theme_extension.dart';
 import 'package:flutter/material.dart';
 
 class SkillWidget extends StatelessWidget {
-  const SkillWidget({super.key, required this.skill, this.mainAxisAlignment = MainAxisAlignment.start, this.spacing = 0});
+  const SkillWidget({super.key, required this.skill, this.width});
   final Skill skill;
-  final MainAxisAlignment mainAxisAlignment;
-  final double spacing;
+  final double? width;
 
-  static const double _circleWidth = 30;
-  static const double _circleHeight = 30;
+  static const double _circleWidth = 20;
+  static const double _circleHeight = 20;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: mainAxisAlignment,
-      children: [
-        _getSkillName(context),
-        _getSkillLevel(context),
-      ].withHorizontalElementsSpacing(spacing),
+    return SizedBox(
+      width: width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _getSkillName(context),
+          _getSkillLevel(context),
+        ],
+      ),
     );
   }
 

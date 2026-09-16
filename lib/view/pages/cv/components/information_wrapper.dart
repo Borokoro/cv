@@ -12,6 +12,7 @@ class InformationWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: textStyle),
         body,

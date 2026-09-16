@@ -35,15 +35,18 @@ class NameAndPhotoWidget extends StatelessWidget {
             top: 17,
             left: 0,
             right: 0,
-            child: Text(
-              PersonalInformationConstants.fullName,
-              textAlign: TextAlign.center,
-              style: textTheme.fullNameFont.copyWith(color: ColorConstants.white),
+            child: Padding(
+              padding: StyleConstants.edgeInsetsT10,
+              child: Text(
+                PersonalInformationConstants.fullName,
+                textAlign: TextAlign.center,
+                style: textTheme.fullNameFont.copyWith(color: ColorConstants.white),
+              ),
             ),
           ),
 
           Positioned(
-            top: 76,
+            top: 100,
             left: 0,
             right: 0,
             child: Center(

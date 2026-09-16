@@ -1,6 +1,7 @@
 import 'package:cv/constants/app_constants.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/utils/elements_spacing_extension.dart';
+import 'package:cv/utils/string_utils.dart';
 import 'package:cv/utils/text_theme_extension.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -28,18 +29,22 @@ class PersonalInformationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [_getPersonalInformationIcon(), _getPersonalInformationBody(context)],
+      children: [
+        _getPersonalInformationIcon(),
+        Expanded(child: _getPersonalInformationBody(context)),
+      ].withHorizontalElementsSpacing(20),
     );
   }
 
   Widget _getPersonalInformationIcon() {
-    return Icon(icon, size: 20);
+    return Icon(icon, size: 30, color: ColorConstants.purplish);
   }
 
   Widget _getPersonalInformationBody(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: textTheme.fontRegularBold),
         _getDescriptionWidget(context),
@@ -61,7 +66,12 @@ class PersonalInformationWidget extends StatelessWidget {
                 fontFamily: AppConstants.defaultFont,
               ),
               recognizer: TapGestureRecognizer()
-                ..onTap = () => launchUrl(Uri(scheme: isDescriptionEmail ? 'mailto' : null, path: description)),
+                ..onTap = () => launchUrl(
+                  Uri(
+                    scheme: isDescriptionEmail ? 'mailto' : 'https',
+                    path: StringUtils.removeHttpsFromLink(description),
+                  ),
+                ),
             ),
           ],
         ),
@@ -71,6 +81,7 @@ class PersonalInformationWidget extends StatelessWidget {
         return Text(description, style: textTheme.fontRegular);
       } else {
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(description, style: textTheme.fontRegular),
             Text(description2!, style: textTheme.fontRegular),
