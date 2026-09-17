@@ -10,4 +10,5 @@ class IconConstants {
   static const IconData nationality = Icons.language_rounded;
   static const IconData github = Icons.laptop;
   static const IconData linkedin = Icons.link_rounded;
+  static const IconData upArrow = Icons.arrow_upward_rounded;
 }

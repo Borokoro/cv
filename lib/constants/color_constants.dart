@@ -7,4 +7,5 @@ abstract class ColorConstants {
   static const Color linkBlue = Color(0xFF0000EE);
   static const Color brightGrey = Color(0xFFE9E9E9);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color red = Color(0xFFFF0000);
 }

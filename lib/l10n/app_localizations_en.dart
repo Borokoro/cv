@@ -119,4 +119,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get present => 'Present';
+
+  @override
+  String get goToProjectsPage => 'Go to projects page ↑';
 }

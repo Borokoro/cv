@@ -38,7 +38,7 @@ class NameAndPhotoWidget extends StatelessWidget {
             child: Padding(
               padding: StyleConstants.edgeInsetsT10,
               child: Text(
-                PersonalInformationConstants.fullName,
+                PersonalInformationConstants.fullName.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: textTheme.fullNameFont.copyWith(color: ColorConstants.white),
               ),

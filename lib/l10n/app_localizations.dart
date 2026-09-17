@@ -313,6 +313,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Present'**
   String get present;
+
+  /// No description provided for @goToProjectsPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to projects page ↑'**
+  String get goToProjectsPage;
 }
 
 class _AppLocalizationsDelegate
