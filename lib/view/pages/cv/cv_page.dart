@@ -26,7 +26,7 @@ class CvPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: 'CV'),
+      appBar: AppBarWidget(),
       body: SafeArea(child: SingleChildScrollView(child: _getCVPageBody(context))),
     );
   }
@@ -48,7 +48,7 @@ class CvPage extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
-      color: ColorConstants.brightGrey,
+      color: ColorConstants.brightGray,
       child: Column(
         children: [
           NameAndPhotoWidget(),
@@ -171,7 +171,7 @@ class CvPage extends StatelessWidget {
             style: textTheme.fontRegular.copyWith(color: ColorConstants.black, fontFamily: AppConstants.defaultFont),
           ),
           TextSpan(
-            text: localizations.university,
+            text: localizations.universityInflected,
             style: textTheme.fontRegularBold.copyWith(
               color: ColorConstants.linkBlue,
               fontFamily: AppConstants.defaultFont,

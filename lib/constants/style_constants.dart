@@ -9,4 +9,5 @@ abstract class StyleConstants {
   static const EdgeInsets edgeInsetsH40 = EdgeInsets.only(left: 40, right: 40);
   static const EdgeInsets edgeInsetsL20 = EdgeInsets.only(left: 20);
   static const EdgeInsets edgeInsetsR20 = EdgeInsets.only(right: 20);
+  static const EdgeInsets edgeInsetsH20 = EdgeInsets.only(left: 20, right: 20);
 }

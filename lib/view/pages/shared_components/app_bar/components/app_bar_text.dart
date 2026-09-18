@@ -5,7 +5,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AppBarText extends StatefulWidget {
-  const AppBarText({super.key, required this.onTap, required this.text, this.isChosen = false, this.onHoverColor = ColorConstants.red});
+  const AppBarText({
+    super.key,
+    required this.onTap,
+    required this.text,
+    this.isChosen = false,
+    this.onHoverColor = ColorConstants.red,
+  });
 
   final VoidCallback onTap;
   final String text;
@@ -17,7 +23,6 @@ class AppBarText extends StatefulWidget {
 }
 
 class _AppBarTextState extends State<AppBarText> {
-
   bool _isHover = false;
 
   @override
@@ -31,15 +36,20 @@ class _AppBarTextState extends State<AppBarText> {
       onExit: (_) => setState(() {
         _isHover = false;
       }),
-      child: RichText(text: TextSpan(
+      child: RichText(
+        text: TextSpan(
           children: [
             TextSpan(
               text: widget.text,
-              style: textTheme.fontHeader.copyWith(color: _isHover || widget.isChosen ? widget.onHoverColor : ColorConstants.white, fontFamily: AppConstants.defaultFont),
+              style: textTheme.fontAppBar.copyWith(
+                color: _isHover || widget.isChosen ? widget.onHoverColor : ColorConstants.white,
+                fontFamily: AppConstants.defaultFont,
+              ),
               recognizer: TapGestureRecognizer()..onTap = widget.onTap,
             ),
           ],
-      ),),
+        ),
+      ),
     );
   }
 }

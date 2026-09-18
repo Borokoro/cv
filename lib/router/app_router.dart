@@ -9,5 +9,6 @@ class AppRouter extends RootStackRouter{
   @override
   List<AutoRoute> get routes => [
     AutoRoute(initial: true, path: "/", page:CvRoute.page),
+    AutoRoute(page: ProjectsRoute.page, path: "/projects"),
   ];
 }

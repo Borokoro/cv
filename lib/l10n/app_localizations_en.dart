@@ -15,6 +15,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get university => 'Lublin University of Technology';
 
   @override
+  String get universityInflected => 'Lublin University of Technology';
+
+  @override
   String get introductionPart2 =>
       'with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.';
 
@@ -122,4 +125,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToProjectsPage => 'Go to projects page ↑';
+
+  @override
+  String get goToCvPage => 'Go to CV page ↓';
 }

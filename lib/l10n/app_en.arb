@@ -2,6 +2,7 @@
   "@@locale": "en",
   "introductionPart1": "I am a Computer Science graduate from",
   "university": "Lublin University of Technology",
+  "universityInflected": "Lublin University of Technology",
   "introductionPart2": "with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.",
   "workExperience": "Work experience",
   "polytechnicsInternship": "Polytechnicʼs Internship",
@@ -36,5 +37,6 @@
   "personal": "Personal",
   "languages": "Languages",
   "present": "Present",
-  "goToProjectsPage": "Go to projects page ↑"
+  "goToProjectsPage": "Go to projects page ↑",
+  "goToCvPage": "Go to CV page ↓"
 }

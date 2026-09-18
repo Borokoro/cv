@@ -9,86 +9,88 @@ class AppLocalizationsPl extends AppLocalizations {
   AppLocalizationsPl([String locale = 'pl']) : super(locale);
 
   @override
-  String get introductionPart1 => 'I am a Computer Science graduate from';
+  String get introductionPart1 => 'Jestem absolwentem informatyki';
 
   @override
-  String get university => 'Lublin University of Technology';
+  String get university => 'Politechnika Lubelska';
+
+  @override
+  String get universityInflected => 'Politechniki Lubelskiej';
 
   @override
   String get introductionPart2 =>
-      'with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.';
+      'i interesuję się tworzeniem oprogramowania. Mam doświadczenie w tworzeniu aplikacji wieloplatformowych z wykorzystaniem frameworka Flutter i chętnie rozwijam swoje umiejętności, poznając nowe technologie. Motywuje mnie ciągła nauka i zdobywanie praktycznego doświadczenia, a moim celem jest nieustanne doskonalenie swoich umiejętności technicznych. Chętnie podejmuję współpracę z nowymi osobami, stawiam czoła nowym wyzwaniom i rozwijam się jako programista.';
 
   @override
-  String get workExperience => 'Work experience';
+  String get workExperience => 'Doświadczenie zawodowe';
 
   @override
-  String get polytechnicsInternship => 'Polytechnicʼs Internship';
+  String get polytechnicsInternship => 'Staż politechniki';
 
   @override
   String get lublin => 'Lublin';
 
   @override
   String get polytechnicsInternDetails =>
-      'Mandatory internship organized by polytechnic with strong focus on Flutter.';
+      'Obowiązkowa praktyka zawodowa zorganizowana przez Politechnikę, z dużym naciskiem na technologię Flutter.';
 
   @override
   String get flutter => 'Flutter';
 
   @override
-  String get flutterIntern => 'Flutter Intern';
+  String get flutterIntern => 'Stażysta Flutter';
 
   @override
   String get paidwork => 'Paidwork';
 
   @override
-  String get paidworkInternDetails => 'Flutter internship at Paidwork company.';
+  String get paidworkInternDetails => 'Staż w Flutterze w firmie Paidwork.';
 
   @override
   String get ballSquad => 'Ball Squad';
 
   @override
-  String get ballSquadInternDetails =>
-      'Flutter internship at Ball Squad Company.';
+  String get ballSquadInternDetails => 'Staż w Flutterze w firmie Ball Squad.';
 
   @override
-  String get warsaw => 'Warsaw';
+  String get warsaw => 'Warszawa';
 
   @override
-  String get flutterJunior => 'Flutter Junior';
+  String get flutterJunior => 'Młodszy programista Flutter';
 
   @override
   String get ballSquadJuniorDetails =>
-      'Junior Flutter Developer at Ball Squad Company.';
+      'Młodszy programista w Flutterze w firmie Ball Squad.';
 
   @override
-  String get educationAndQualifications => 'Education and Qualifications';
+  String get educationAndQualifications => 'Wykształcenie i kwalifikacje';
 
   @override
-  String get bachelorTitle => 'Bachelor of Computer Science';
+  String get bachelorTitle => 'Tytuł inżyniera z informatyki';
 
   @override
-  String get masterTitle => 'Master of Computer Science';
+  String get masterTitle => 'Tytuł magistra z informatyki';
 
   @override
-  String get address => 'Address';
+  String get address => 'Adres';
 
   @override
-  String get phoneNumber => 'Phone number';
+  String get phoneNumber => 'Numer telefonu';
 
   @override
-  String get email => 'Email';
+  String get email => 'E-mail';
 
   @override
-  String get dateOfBirth => 'Date of birth';
+  String get dateOfBirth => 'Data urodzenia';
 
   @override
-  String get placeOfBirth => 'Place of birth';
+  String get placeOfBirth => 'Miejsce urodzenia';
 
   @override
-  String get gender => 'Gender';
+  String get gender => 'Płeć';
 
   @override
-  String get nationality => 'Nationality';
+  String get nationality => 'Narodowość';
 
   @override
   String get github => 'Github';
@@ -97,29 +99,32 @@ class AppLocalizationsPl extends AppLocalizations {
   String get linkedIn => 'LinkedIn';
 
   @override
-  String get hetmanska => 'Hetmanska';
+  String get hetmanska => 'Hetmańska';
 
   @override
-  String get poland => 'Poland';
+  String get poland => 'Polska';
 
   @override
-  String get male => 'Male';
+  String get male => 'Mężczyzna';
 
   @override
-  String get english => 'English';
+  String get english => 'Angielski';
 
   @override
-  String get polish => 'Polish';
+  String get polish => 'Polski';
 
   @override
-  String get personal => 'Personal';
+  String get personal => 'Dane osobowe';
 
   @override
-  String get languages => 'Languages';
+  String get languages => 'Języki';
 
   @override
-  String get present => 'Present';
+  String get present => 'Obecnie';
 
   @override
-  String get goToProjectsPage => 'Go to projects page ↑';
+  String get goToProjectsPage => 'Przejdź do projektów ↑';
+
+  @override
+  String get goToCvPage => 'Przejdź do CV ↓';
 }

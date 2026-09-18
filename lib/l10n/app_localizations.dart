@@ -110,6 +110,12 @@ abstract class AppLocalizations {
   /// **'Lublin University of Technology'**
   String get university;
 
+  /// No description provided for @universityInflected.
+  ///
+  /// In en, this message translates to:
+  /// **'Lublin University of Technology'**
+  String get universityInflected;
+
   /// No description provided for @introductionPart2.
   ///
   /// In en, this message translates to:
@@ -319,6 +325,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to projects page ↑'**
   String get goToProjectsPage;
+
+  /// No description provided for @goToCvPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to CV page ↓'**
+  String get goToCvPage;
 }
 
 class _AppLocalizationsDelegate

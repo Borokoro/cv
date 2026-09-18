@@ -1,3 +1,4 @@
+import 'package:cv/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 class NameAndPhotoBackground extends CustomPainter {
@@ -7,7 +8,7 @@ class NameAndPhotoBackground extends CustomPainter {
     final double height = size.height;
 
     final Paint topPaint = Paint()
-      ..color = const Color(0xFF565B80);
+      ..color = ColorConstants.grayishBlue;
 
     canvas.drawRect(
       Rect.fromLTWH(0, 0, width, height),
@@ -15,7 +16,7 @@ class NameAndPhotoBackground extends CustomPainter {
     );
 
     final Paint darkPaint = Paint()
-      ..color = const Color(0xFF30355F);
+      ..color = ColorConstants.navyBlue;
 
     final Path darkPath = Path();
 
@@ -67,7 +68,7 @@ class NameAndPhotoBackground extends CustomPainter {
     canvas.drawPath(darkPath, darkPaint);
 
     final Paint bottomPaint = Paint()
-      ..color = const Color(0xFFE9E9E9);
+      ..color = ColorConstants.brightGray;
 
     final Path bottomPath = Path();
 
