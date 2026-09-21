@@ -50,5 +50,6 @@
   "peopleManagementDescription": "This project allows to add people and their personal information and then separate them into groups. The most important aspect of this project is the usage of local SQL database in Flutter project.",
   "moodUpDescription": "One of my recruitment task. This application allows user to scroll through the different Marvel's comics and learn about them.",
   "authorSearchDescription": "Simple application that consumes public REST API. It shows user a list of created books by the given author.",
-  "portfolioDescription": "My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive."
+  "portfolioDescription": "My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.",
+  "gotToProject": "Go to project"
 }

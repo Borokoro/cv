@@ -137,7 +137,7 @@ class CvPage extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
-      padding: StyleConstants.edgeInsetsH40V40,
+      padding: StyleConstants.edgeInsets40,
       color: ColorConstants.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

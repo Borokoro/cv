@@ -155,7 +155,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cvDescription =>
-      'This CV is also created using Flutter framework. I want to highlight this project as it is my biggest project that I did outside of my work.';
+      'This CV also utilizes Flutter framework. I want to highlight this project as it is my biggest project that I did outside of my work.';
 
   @override
   String get ballSquadDescription =>
@@ -176,4 +176,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get portfolioDescription =>
       'My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.';
+
+  @override
+  String get gotToProject => 'Go to project';
 }

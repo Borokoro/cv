@@ -175,4 +175,7 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get portfolioDescription =>
       'My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.';
+
+  @override
+  String get gotToProject => 'Go to project';
 }

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/style_constants.dart';
+import 'package:cv/types/enum/arrow_direction.dart';
 import 'package:cv/types/enum/project.dart';
 import 'package:cv/utils/string_utils.dart';
 import 'package:cv/utils/text_theme_extension.dart';
@@ -35,14 +36,14 @@ class _ProjectsPageState extends State<ProjectsPage> {
   Widget _getProjectPageBody(BuildContext context) {
     return Row(
       children: [
-        _getArrow(context, isArrowLeft: true),
-        Expanded(child: _getProjectInformation()),
-        _getArrow(context, isArrowLeft: false),
+        _getArrow(context, arrowDirection: ArrowDirection.left),
+        Flexible(child: _getProjectInformation()),
+        _getArrow(context, arrowDirection: ArrowDirection.right),
       ],
     );
   }
 
-  Widget _getArrow(BuildContext context, {required bool isArrowLeft}) {
+  Widget _getArrow(BuildContext context, {required ArrowDirection arrowDirection}) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Material(
@@ -50,12 +51,12 @@ class _ProjectsPageState extends State<ProjectsPage> {
       child: Ink(
         child: InkWell(
           hoverColor: ColorConstants.black.withValues(alpha: 0.5),
-          onTap: () => onArrowTap(isArrowLeft),
+          onTap: () => onArrowTap(arrowDirection),
           child: Padding(
             padding: StyleConstants.edgeInsetsH20,
             child: Center(
               child: Text(
-                isArrowLeft ? StringUtils.lessThan : StringUtils.greaterThan,
+                arrowDirection == ArrowDirection.left ? StringUtils.lessThan : StringUtils.greaterThan,
                 style: textTheme.fontBigArrows.copyWith(color: ColorConstants.white),
               ),
             ),
@@ -65,8 +66,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
     );
   }
 
-  void onArrowTap(bool isArrowLeft) {
-    if(isArrowLeft) {
+  void onArrowTap(ArrowDirection arrowDirection) {
+    if(arrowDirection == ArrowDirection.left) {
       _carouselController.previousPage();
     }
     else {
@@ -75,10 +76,13 @@ class _ProjectsPageState extends State<ProjectsPage> {
   }
 
   Widget _getProjectInformation() {
-    return CarouselSlider(
-      items: _getProjects(),
-      options: CarouselOptions(height: double.infinity, viewportFraction: _viewportFraction),
-      carouselController: _carouselController,
+    return Padding(
+      padding: StyleConstants.edgeInsets40,
+      child: CarouselSlider(
+        items: _getProjects(),
+        options: CarouselOptions(height: double.infinity, viewportFraction: _viewportFraction),
+        carouselController: _carouselController,
+      ),
     );
   }
 

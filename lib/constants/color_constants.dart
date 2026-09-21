@@ -12,5 +12,6 @@ abstract class ColorConstants {
   static const Color navyBlue = Color(0xFF30355F);
   static const Color chineseBlack = Color(0xFF121212);
   static const Color jetBlack = Color(0xFF030303);
-  static const charcoal = Color(0xFF090909);
+  static const Color charcoal = Color(0xFF090909);
+  static const Color skyBlue = Color(0xFFBFEFFF);
 }

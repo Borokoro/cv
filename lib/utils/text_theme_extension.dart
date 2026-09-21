@@ -9,4 +9,5 @@ extension TextThemeExtension on TextTheme {
       const TextStyle(fontSize: 40, fontWeight: FontWeight.w700, letterSpacing: 5, height: 1.0);
   TextStyle get fontAppBar => const TextStyle(fontSize: 30, fontWeight: FontWeight.w800);
   TextStyle get fontBigArrows => const TextStyle(fontSize: 50, fontWeight: FontWeight.w800);
+  TextStyle get fontHeaderProjects => const TextStyle(fontSize: 100, fontWeight: FontWeight.w700, letterSpacing: 3.0);
 }
