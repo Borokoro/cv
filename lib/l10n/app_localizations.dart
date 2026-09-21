@@ -331,6 +331,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to CV page ↓'**
   String get goToCvPage;
+
+  /// No description provided for @passwordWalletDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a web application that allows users to store passwords. These passwords can be encrypted using either the HMAC or SHA512 algorithm. Within their dashboard, users have the ability to display encrypted passwords, edit them, restore previous versions, share a password with another user, delete it, or add a new password. They also have the option to view logs, so they can track activity on their account.'**
+  String get passwordWalletDescription;
+
+  /// No description provided for @tableDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This is one of the projects that was created to pass a subject at polytechnic. The application generates tables based on data from a text file, XML, or from data in a MySQL database. Table cells are colored in red (if the retrieved data matches previously loaded data), in gray (if the retrieved data doesn\'t match previously loaded data or if there were no previously loaded data), or in white (if we are modifying a cell\'s data). This data can later be saved to a database or appropriate files.'**
+  String get tableDescription;
+
+  /// No description provided for @bowlingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a simple application that calculates points scored during a game of bowling. The most important aspect of this project are unit tests.'**
+  String get bowlingDescription;
+
+  /// No description provided for @skladappkaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This project was created in collaboration with my colleague to obtain the title of an engineer. This application helps users select components for a custom computer setup. It enables adding, editing, saving, comparing, and sharing user-created setups. The application utilizes the Firebase database where all components, saved setups, and user accounts are stored. Additionally, the application includes many other supplementary features.'**
+  String get skladappkaDescription;
+
+  /// No description provided for @jumpyJumperJumpsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'It is a mobile game created using Flutter with Flame engine. It is a simple platform game where you have to jump between obstacles and achieve the highest possible score. This application is also connected to Firebase database to collect the highest scores between all the players.'**
+  String get jumpyJumperJumpsDescription;
+
+  /// No description provided for @countriesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple application where I tested the use of GraphQL API in Flutter project.'**
+  String get countriesDescription;
+
+  /// No description provided for @cvDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This CV is also created using Flutter framework. I want to highlight this project as it is my biggest project that I did outside of my work.'**
+  String get cvDescription;
+
+  /// No description provided for @ballSquadDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'My biggest commercial project that I worked on. This application fully utilizes Flutter\'s multiplatform capabilities. This application allows user to book classrooms or pitches across Poland. It is also stores and maps almost every sport object in Poland.'**
+  String get ballSquadDescription;
+
+  /// No description provided for @peopleManagementDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This project allows to add people and their personal information and then separate them into groups. The most important aspect of this project is the usage of local SQL database in Flutter project.'**
+  String get peopleManagementDescription;
+
+  /// No description provided for @moodUpDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'One of my recruitment task. This application allows user to scroll through the different Marvel\'s comics and learn about them.'**
+  String get moodUpDescription;
+
+  /// No description provided for @authorSearchDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple application that consumes public REST API. It shows user a list of created books by the given author.'**
+  String get authorSearchDescription;
+
+  /// No description provided for @portfolioDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.'**
+  String get portfolioDescription;
 }
 
 class _AppLocalizationsDelegate

@@ -8,4 +8,5 @@ extension TextThemeExtension on TextTheme {
   TextStyle get fullNameFont =>
       const TextStyle(fontSize: 40, fontWeight: FontWeight.w700, letterSpacing: 5, height: 1.0);
   TextStyle get fontAppBar => const TextStyle(fontSize: 30, fontWeight: FontWeight.w800);
+  TextStyle get fontBigArrows => const TextStyle(fontSize: 50, fontWeight: FontWeight.w800);
 }

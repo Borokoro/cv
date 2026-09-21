@@ -14,7 +14,7 @@ import 'package:cv/view/pages/cv/components/information_wrapper.dart';
 import 'package:cv/view/pages/cv/components/personal_information_components/name_and_photo_widget.dart';
 import 'package:cv/view/pages/cv/components/personal_information_components/personal_information_widget.dart';
 import 'package:cv/view/pages/cv/components/skill_widget.dart';
-import 'package:cv/view/pages/shared_components/app_bar/app_bar_widget.dart';
+import 'package:cv/view/shared_components/app_bar/app_bar_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';

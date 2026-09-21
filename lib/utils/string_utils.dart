@@ -3,6 +3,8 @@ abstract class StringUtils {
   static const String longDash = '—';
   static const String comma = ",";
   static const String https = "https://";
+  static const String greaterThan = ">";
+  static const String lessThan = "<";
 
   static String wrapInSpaces(String text) {
     return space + text + space;

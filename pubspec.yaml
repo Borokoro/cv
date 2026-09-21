@@ -44,6 +44,7 @@ dependencies:
   intl: ^0.20.2
   equatable: ^2.1.0
   url_launcher: ^6.3.2
+  carousel_slider: ^5.1.2
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/cv/
+    - assets/projects/
+    - assets/pdf/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
