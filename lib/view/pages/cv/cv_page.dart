@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cv/constants/app_constants.dart';
+import 'package:cv/constants/assets_constants.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/icon_constants.dart';
 import 'package:cv/constants/style_constants.dart';
@@ -153,7 +154,7 @@ class CvPage extends StatelessWidget {
             body: _getEducation(context),
             textStyle: textTheme.fontHeader,
           ),
-          _getSkill(),
+          _getSkillAndPdfLink(context),
         ].withDivider(const Divider()).withVerticalElementsSpacing(20),
       ),
     );
@@ -251,6 +252,17 @@ class CvPage extends StatelessWidget {
     );
   }
 
+  Widget _getSkillAndPdfLink(BuildContext context){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        _getSkill(),
+        _getPdfLink(context),
+      ],
+    );
+  }
+
   Widget _getSkill() {
     final List<Skill> skills = Skill.values.where((Skill skill) => skill.isProgrammingSkill).toList();
 
@@ -260,4 +272,16 @@ class CvPage extends StatelessWidget {
       ].withVerticalElementsSpacing(15),
     );
   }
+
+  Widget _getPdfLink(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context)!;
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
+    return RichText(text: TextSpan(
+      text: localizations.goToPdfVersion,
+      style: textTheme.fontRegular.copyWith(color: ColorConstants.linkBlue, decoration: TextDecoration.underline, fontFamily: AppConstants.defaultFont),
+      recognizer: TapGestureRecognizer() ..onTap = () => launchUrl(Uri(path: AssetsConstants.cvPdfVersion))),
+    );
+  }
+
 }

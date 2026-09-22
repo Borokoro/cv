@@ -46,10 +46,10 @@
   "jumpyJumperJumpsDescription": "It is a mobile game created using Flutter with Flame engine. It is a simple platform game where you have to jump between obstacles and achieve the highest possible score. This application is also connected to Firebase database to collect the highest scores between all the players.",
   "countriesDescription": "Simple application where I tested the use of GraphQL API in Flutter project.",
   "cvDescription": "This CV also utilizes Flutter framework. I want to highlight this project as it is my biggest project that I did outside of my work.",
-  "ballSquadDescription": "My biggest commercial project that I worked on. This application fully utilizes Flutter's multiplatform capabilities. This application allows user to book classrooms or pitches across Poland. It is also stores and maps almost every sport object in Poland.",
-  "peopleManagementDescription": "This project allows to add people and their personal information and then separate them into groups. The most important aspect of this project is the usage of local SQL database in Flutter project.",
+  "ballSquadDescription": "My biggest commercial project that I had the opportunity to work on. The application fully utilizes Flutter's multiplatform capabilities, it has a single codebase for all supported platforms. It allows users to book classrooms and sports pitches across Poland. It also stores information about almost every sports facility in Poland and displays them on a map. Users can also create an account and complete their profile by adding their skills and interests, as well as create a team with their friends.",  "peopleManagementDescription": "This project allows to add people and their personal information and then separate them into groups. The most important aspect of this project is the usage of local SQL database in Flutter project.",
   "moodUpDescription": "One of my recruitment task. This application allows user to scroll through the different Marvel's comics and learn about them.",
   "authorSearchDescription": "Simple application that consumes public REST API. It shows user a list of created books by the given author.",
   "portfolioDescription": "My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.",
-  "gotToProject": "Go to project"
+  "gotToProject": "Go to project",
+  "goToPdfVersion": "Go to PDF version"
 }

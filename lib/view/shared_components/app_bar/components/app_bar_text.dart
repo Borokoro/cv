@@ -30,12 +30,9 @@ class _AppBarTextState extends State<AppBarText> {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return MouseRegion(
-      onHover: (_) => setState(() {
-        _isHover = true;
-      }),
-      onExit: (_) => setState(() {
-        _isHover = false;
-      }),
+      onHover: (_) => _changeHoverValue(true),
+      onEnter: (_) => _changeHoverValue(true),
+      onExit: (_) => _changeHoverValue(false),
       child: RichText(
         text: TextSpan(
           children: [
@@ -51,5 +48,13 @@ class _AppBarTextState extends State<AppBarText> {
         ),
       ),
     );
+  }
+
+  void _changeHoverValue(bool hover) {
+    if(_isHover != hover){
+      setState(() {
+        _isHover=hover;
+      });
+    }
   }
 }

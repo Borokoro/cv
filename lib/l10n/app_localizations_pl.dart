@@ -130,52 +130,55 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get passwordWalletDescription =>
-      'This is a web application that allows users to store passwords. These passwords can be encrypted using either the HMAC or SHA512 algorithm. Within their dashboard, users have the ability to display encrypted passwords, edit them, restore previous versions, share a password with another user, delete it, or add a new password. They also have the option to view logs, so they can track activity on their account.';
+      'Jest to aplikacja webowa umożliwiająca użytkownikom przechowywanie haseł. Hasła mogą być szyfrowane z wykorzystaniem algorytmu HMAC lub SHA512. W swoim panelu użytkownicy mogą wyświetlać zaszyfrowane hasła, edytować je, przywracać ich poprzednie wersje, udostępniać hasła innym użytkownikom, usuwać je oraz dodawać nowe. Aplikacja umożliwia również przeglądanie logów, dzięki czemu użytkownicy mogą śledzić aktywność na swoim koncie.';
 
   @override
   String get tableDescription =>
-      'This is one of the projects that was created to pass a subject at polytechnic. The application generates tables based on data from a text file, XML, or from data in a MySQL database. Table cells are colored in red (if the retrieved data matches previously loaded data), in gray (if the retrieved data doesn\'t match previously loaded data or if there were no previously loaded data), or in white (if we are modifying a cell\'s data). This data can later be saved to a database or appropriate files.';
+      'Jest to jeden z projektów stworzonych w ramach zaliczenia przedmiotu na Politechnice. Aplikacja generuje tabele na podstawie danych z pliku tekstowego, pliku XML lub danych przechowywanych w bazie MySQL. Komórki tabeli są oznaczane kolorem czerwonym, jeśli pobrane dane są zgodne z wcześniej załadowanymi danymi, szarym, jeśli pobrane dane różnią się od wcześniej załadowanych danych lub jeśli nie było wcześniej załadowanych danych, oraz białym, jeśli dane w komórce są aktualnie modyfikowane. Dane mogą następnie zostać zapisane w bazie danych lub odpowiednich plikach.';
 
   @override
   String get bowlingDescription =>
-      'This is a simple application that calculates points scored during a game of bowling. The most important aspect of this project are unit tests.';
+      'Jest to prosta aplikacja obliczająca wynik uzyskany podczas gry w kręgle. Najważniejszym elementem tego projektu są testy jednostkowe.';
 
   @override
   String get skladappkaDescription =>
-      'This project was created in collaboration with my colleague to obtain the title of an engineer. This application helps users select components for a custom computer setup. It enables adding, editing, saving, comparing, and sharing user-created setups. The application utilizes the Firebase database where all components, saved setups, and user accounts are stored. Additionally, the application includes many other supplementary features.';
+      'Projekt został stworzony we współpracy z kolegą w celu uzyskania tytułu inżyniera. Aplikacja pomaga użytkownikom w doborze komponentów do własnego zestawu komputerowego. Umożliwia dodawanie, edytowanie, zapisywanie, porównywanie oraz udostępnianie utworzonych zestawów. Aplikacja wykorzystuje bazę danych Firebase, w której przechowywane są wszystkie komponenty, zapisane zestawy oraz konta użytkowników. Dodatkowo aplikacja oferuje wiele innych funkcji uzupełniających.';
 
   @override
   String get jumpyJumperJumpsDescription =>
-      'It is a mobile game created using Flutter with Flame engine. It is a simple platform game where you have to jump between obstacles and achieve the highest possible score. This application is also connected to Firebase database to collect the highest scores between all the players.';
+      'Jest to gra mobilna stworzona we Flutterze z wykorzystaniem silnika Flame. Jest to prosta gra platformowa, w której zadaniem gracza jest przeskakiwanie pomiędzy przeszkodami i zdobycie jak największej liczby punktów. Aplikacja jest również połączona z bazą danych Firebase, w której przechowywane są najwyższe wyniki wszystkich graczy.';
 
   @override
   String get countriesDescription =>
-      'Simple application where I tested the use of GraphQL API in Flutter project.';
+      'Prosta aplikacja, w której przetestowałem wykorzystanie GraphQL API w projekcie Flutterowym.';
 
   @override
   String get cvDescription =>
-      'This CV is also created using Flutter framework. I want to highlight this project as it is my biggest project that I did outside of my work.';
+      'To CV również zostało stworzone z wykorzystaniem frameworka Flutter. Chcę wyróżnić ten projekt, ponieważ jest to mój największy projekt zrealizowany poza pracą.';
 
   @override
   String get ballSquadDescription =>
-      'My biggest commercial project that I worked on. This application fully utilizes Flutter\'s multiplatform capabilities. This application allows user to book classrooms or pitches across Poland. It is also stores and maps almost every sport object in Poland.';
+      'Mój największy projekt komercyjny, przy którym miałem okazję pracować. Aplikacja w pełni wykorzystuje multiplatformowe możliwości Fluttera, jest jedna baza kodowa dla wszystkich platform. Aplikacja umożliwia użytkownikom rezerwowanie sal oraz boisk na terenie całej Polski. Przechowuje ona również informacje o niemal każdym obiekcie sportowym w Polsce oraz prezentuje je na mapie. Użytkownik ma również możliwość stworzenia konta i wypełnienia swojego profilu (może dodać swoje umiejętności i zainteresowania) oraz utworzyć zespół z swoimi znajomymi.';
 
   @override
   String get peopleManagementDescription =>
-      'This project allows to add people and their personal information and then separate them into groups. The most important aspect of this project is the usage of local SQL database in Flutter project.';
+      'Projekt umożliwia dodawanie osób wraz z ich danymi osobowymi, a następnie przypisywanie ich do poszczególnych grup. Najważniejszym elementem tego projektu jest wykorzystanie lokalnej bazy danych SQL w aplikacji Flutter.';
 
   @override
   String get moodUpDescription =>
-      'One of my recruitment task. This application allows user to scroll through the different Marvel\'s comics and learn about them.';
+      'Jedno z moich zadań rekrutacyjnych. Aplikacja umożliwia przeglądanie różnych komiksów Marvela oraz zapoznawanie się z informacjami na ich temat.';
 
   @override
   String get authorSearchDescription =>
-      'Simple application that consumes public REST API. It shows user a list of created books by the given author.';
+      'Prosta aplikacja korzystająca z publicznego REST API. Wyświetla użytkownikowi listę książek napisanych przez wskazanego autora.';
 
   @override
   String get portfolioDescription =>
-      'My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.';
+      'Moje pierwsze portfolio stworzone z wykorzystaniem frameworka Flutter. Do zarządzania stanem wykorzystuje Bloc, a do przechowywania danych Firestore. Kod został napisany z zachowaniem zasad czystości, a widok jest w pełni responsywny.';
 
   @override
-  String get gotToProject => 'Go to project';
+  String get gotToProject => 'Przejdź do projektu';
+
+  @override
+  String get goToPdfVersion => 'Przejdź do wersji PDF';
 }

@@ -7,4 +7,6 @@ abstract class AssetsConstants {
   static const String portfolioGif = "assets/projects/portfolio.gif";
   static const String skladappkaGif = "assets/projects/skladappka.gif";
   static const String tableGif = "assets/projects/table.gif";
+
+  static const String cvPdfVersion = "assets/pdf/Marek Cichoń CV.pdf";
 }

@@ -159,7 +159,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ballSquadDescription =>
-      'My biggest commercial project that I worked on. This application fully utilizes Flutter\'s multiplatform capabilities. This application allows user to book classrooms or pitches across Poland. It is also stores and maps almost every sport object in Poland.';
+      'My biggest commercial project that I had the opportunity to work on. The application fully utilizes Flutter\'s multiplatform capabilities, it has a single codebase for all supported platforms. It allows users to book classrooms and sports pitches across Poland. It also stores information about almost every sports facility in Poland and displays them on a map. Users can also create an account and complete their profile by adding their skills and interests, as well as create a team with their friends.';
 
   @override
   String get peopleManagementDescription =>
@@ -179,4 +179,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gotToProject => 'Go to project';
+
+  @override
+  String get goToPdfVersion => 'Go to PDF version';
 }

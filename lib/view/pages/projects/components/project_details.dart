@@ -27,10 +27,11 @@ class ProjectDetails extends StatelessWidget {
   }
 
   Widget _getTitleAndDescription(BuildContext context) {
-    return SizedBox.expand(
+    return SizedBox(
+      width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [_getTitle(context), _getDescription(context)].withVerticalElementsSpacing(20),
+        children: [_getTitle(context), Expanded(child: SingleChildScrollView(child: _getDescription(context)))].withVerticalElementsSpacing(20),
       ),
     );
   }

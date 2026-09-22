@@ -63,7 +63,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   void _goToCvPage(BuildContext context) {
-    AutoRouter.of(context).replace(CvRoute());
+    AutoRouter.of(context).navigate(CvRoute());
   }
 
   Widget _getLanguageChange(BuildContext context) {
