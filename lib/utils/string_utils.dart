@@ -1,10 +1,12 @@
 abstract class StringUtils {
   static const String space = " ";
+  static const String emptyString = "";
   static const String longDash = '—';
   static const String comma = ",";
   static const String https = "https://";
   static const String greaterThan = ">";
   static const String lessThan = "<";
+  static const String assets = "assets/";
 
   static String wrapInSpaces(String text) {
     return space + text + space;

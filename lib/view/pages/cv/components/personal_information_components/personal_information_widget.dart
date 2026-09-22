@@ -69,7 +69,8 @@ class PersonalInformationWidget extends StatelessWidget {
                 ..onTap = () => launchUrl(
                   Uri(
                     scheme: isDescriptionEmail ? 'mailto' : 'https',
-                    path: StringUtils.removeHttpsFromLink(description),
+                    host: isDescriptionEmail ? null : StringUtils.emptyString,
+                    path: isDescriptionEmail ? description : StringUtils.removeHttpsFromLink(description),
                   ),
                 ),
             ),

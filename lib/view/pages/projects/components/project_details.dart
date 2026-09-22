@@ -94,7 +94,7 @@ class ProjectDetails extends StatelessWidget {
               fontFamily: AppConstants.defaultFont,
             ),
             recognizer: TapGestureRecognizer()
-              ..onTap = () => launchUrl(Uri(scheme: "https", path: StringUtils.removeHttpsFromLink(project.link))),
+              ..onTap = () => launchUrl(Uri(scheme: "https", host: StringUtils.emptyString, path: StringUtils.removeHttpsFromLink(project.link))),
           ),
         ],
       ),

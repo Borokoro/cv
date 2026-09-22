@@ -8,5 +8,5 @@ abstract class AssetsConstants {
   static const String skladappkaGif = "assets/projects/skladappka.gif";
   static const String tableGif = "assets/projects/table.gif";
 
-  static const String cvPdfVersion = "assets/pdf/Marek Cichoń CV.pdf";
+  static const String cvPdfVersion = "assets/pdf/Marek_Cichon_CV.pdf";
 }

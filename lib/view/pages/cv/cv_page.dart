@@ -16,6 +16,7 @@ import 'package:cv/view/pages/cv/components/personal_information_components/name
 import 'package:cv/view/pages/cv/components/personal_information_components/personal_information_widget.dart';
 import 'package:cv/view/pages/cv/components/skill_widget.dart';
 import 'package:cv/view/shared_components/app_bar/app_bar_widget.dart';
+import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -113,7 +114,12 @@ class CvPage extends StatelessWidget {
           title: localizations.nationality,
           description: pi.nationality,
         ),
-        PersonalInformationWidget(icon: IconConstants.github, title: localizations.github, description: pi.github, isDescriptionLink: true,),
+        PersonalInformationWidget(
+          icon: IconConstants.github,
+          title: localizations.github,
+          description: pi.github,
+          isDescriptionLink: true,
+        ),
         PersonalInformationWidget(
           icon: IconConstants.linkedin,
           title: localizations.linkedIn,
@@ -126,10 +132,7 @@ class CvPage extends StatelessWidget {
 
   Widget _getLanguagesColumn(BuildContext context) {
     return Column(
-      children: [
-        SkillWidget(skill: Skill.english),
-        SkillWidget(skill: Skill.polish),
-      ].withVerticalElementsSpacing(15),
+      children: [SkillWidget(skill: Skill.english), SkillWidget(skill: Skill.polish)].withVerticalElementsSpacing(15),
     );
   }
 
@@ -178,7 +181,9 @@ class CvPage extends StatelessWidget {
               fontFamily: AppConstants.defaultFont,
               decoration: TextDecoration.underline,
             ),
-            recognizer: TapGestureRecognizer()..onTap = () => launchUrl(Uri(scheme: "https", path: StringUtils.removeHttpsFromLink(AppConstants.universityLink))),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () =>
+                  launchUrl(Uri(scheme: "https", host: StringUtils.emptyString, path: StringUtils.removeHttpsFromLink(AppConstants.universityLink))),
           ),
           TextSpan(
             text: StringUtils.space + localizations.introductionPart2,
@@ -252,14 +257,11 @@ class CvPage extends StatelessWidget {
     );
   }
 
-  Widget _getSkillAndPdfLink(BuildContext context){
+  Widget _getSkillAndPdfLink(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        _getSkill(),
-        _getPdfLink(context),
-      ],
+      children: [_getSkill(), _getPdfLink(context)],
     );
   }
 
@@ -277,11 +279,26 @@ class CvPage extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return RichText(text: TextSpan(
-      text: localizations.goToPdfVersion,
-      style: textTheme.fontRegular.copyWith(color: ColorConstants.linkBlue, decoration: TextDecoration.underline, fontFamily: AppConstants.defaultFont),
-      recognizer: TapGestureRecognizer() ..onTap = () => launchUrl(Uri(path: AssetsConstants.cvPdfVersion))),
+    return RichText(
+      text: TextSpan(
+        text: localizations.goToPdfVersion,
+        style: textTheme.fontRegular.copyWith(
+          color: ColorConstants.linkBlue,
+          decoration: TextDecoration.underline,
+          fontFamily: AppConstants.defaultFont,
+        ),
+        recognizer: TapGestureRecognizer()
+          ..onTap = () => launchUrl(Uri(path: _getPathToPdfFile(AssetsConstants.cvPdfVersion)), webViewConfiguration: WebViewConfiguration()),
+      ),
     );
   }
 
+  String _getPathToPdfFile(String text) {
+    if(foundation.kReleaseMode) {
+      return StringUtils.assets + text;
+    }
+    else {
+      return text;
+    }
+  }
 }
