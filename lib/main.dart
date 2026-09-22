@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
           final String languageKey = state.language.langCode;
           return MaterialApp.router(
             theme: appTheme(context),
-            title: 'CV',
+            title: 'Marek Cichon CV',
             debugShowCheckedModeBanner: false,
             routerConfig: appRouter.config(),
             locale: Locale.fromSubtags(languageCode: languageKey),
