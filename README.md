@@ -17,8 +17,8 @@ for deployment in the [Makefile](https://github.com/Borokoro/cv/blob/main/Makefi
 ```
  make deploy-web
 ```
-This command will execute all of the commands inside the Makefile. If your command doesn't work I recommend checking if you have make command installed on your device.
-If not you can install it by following the steps provided in the most voted answear on this [page](https://stackoverflow.com/questions/32127524/how-can-i-install-and-use-make-in-windows).
+This command will execute all of the commands inside Makefile. If your command doesn't work, I recommend checking if you have make command installed on your device.
+If not, you can install it by following the steps provided in the most voted answear on this [page](https://stackoverflow.com/questions/32127524/how-can-i-install-and-use-make-in-windows).
 
 ## Features
 
@@ -47,7 +47,7 @@ You can access the website by clicking on this [link](https://borokoro.github.io
 3. Install git bash or github desktop. You can do this by going to this [website](https://git-scm.com/downloads) to download git bash or to this [website](https://desktop.github.com/download/) to download github desktop.
 4. Clone the repository using the command:
     ```sh
-    git clone https://github.com/Borokoro/ball_squad.git
+    git clone https://github.com/Borokoro/cv.git
     ```
    or clone this repository from your github desktop.
 5. Open the project
