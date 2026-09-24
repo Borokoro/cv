@@ -8,6 +8,7 @@ You can access this by clicking on this [link](https://borokoro.github.io/marek-
 - [Features](#features)
 - [Installation](#installation)
 - [Packages](#packages)
+- [Technicalities](#technicalities)
 - [Possible improvements](#possible-improvements)
 
 ## Github Pages
@@ -75,17 +76,15 @@ You can access the website by clicking on this [link](https://borokoro.github.io
 
 ## Technicalities
 
-###Fluter
+### Fluter
 
 - version: 3.47.5
 - channel: stable
 
- ###IDE
+ ### IDE
 - IDE: Android Studio Panda 2 | 2025.3.2
 
 ## Possible improvements
 
-- Creating a BE for storing the projects and experiences. 
+- Creating BE for storing the projects and experiences. 
 - Improving the view for projects page.
-
- 
