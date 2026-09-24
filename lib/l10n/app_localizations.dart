@@ -323,13 +323,13 @@ abstract class AppLocalizations {
   /// No description provided for @goToProjectsPage.
   ///
   /// In en, this message translates to:
-  /// **'Go to projects page ↑'**
+  /// **'Go to projects page'**
   String get goToProjectsPage;
 
   /// No description provided for @goToCvPage.
   ///
   /// In en, this message translates to:
-  /// **'Go to CV page ↓'**
+  /// **'Go to CV page'**
   String get goToCvPage;
 
   /// No description provided for @passwordWalletDescription.

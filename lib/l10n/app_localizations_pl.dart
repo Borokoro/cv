@@ -123,10 +123,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get present => 'Obecnie';
 
   @override
-  String get goToProjectsPage => 'Przejdź do projektów ↑';
+  String get goToProjectsPage => 'Przejdź do projektów';
 
   @override
-  String get goToCvPage => 'Przejdź do CV ↓';
+  String get goToCvPage => 'Przejdź do CV';
 
   @override
   String get passwordWalletDescription =>

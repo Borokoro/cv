@@ -124,10 +124,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get present => 'Present';
 
   @override
-  String get goToProjectsPage => 'Go to projects page ↑';
+  String get goToProjectsPage => 'Go to projects page';
 
   @override
-  String get goToCvPage => 'Go to CV page ↓';
+  String get goToCvPage => 'Go to CV page';
 
   @override
   String get passwordWalletDescription =>
