@@ -21,7 +21,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-@RoutePage()
+@RoutePage(name: "CvRoute")
 class CvPage extends StatelessWidget {
   const CvPage({super.key});
 

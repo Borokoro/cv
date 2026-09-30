@@ -12,4 +12,9 @@ class IconConstants {
   static const IconData linkedin = Icons.link_rounded;
   static const IconData leftArrow = Icons.arrow_left_rounded;
   static const IconData rightArrow = Icons.arrow_right_rounded;
+
+  static const IconData cvOutlined = IconData(0xAD00, fontFamily: 'icons-cv');
+  static const IconData cvFilled = IconData(0xAD01, fontFamily: 'icons-cv');
+  static const IconData projectsOutlined = IconData(0xAD02, fontFamily: 'icons-cv');
+  static const IconData projectsFilled = IconData(0xAD03, fontFamily: 'icons-cv');
 }

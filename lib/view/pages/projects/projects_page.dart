@@ -11,7 +11,7 @@ import 'package:cv/view/pages/projects/components/project_details.dart';
 import 'package:cv/view/shared_components/app_bar/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage()
+@RoutePage(name: "ProjectsRoute")
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
 

@@ -182,4 +182,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToPdfVersion => 'Go to PDF version';
+
+  @override
+  String get cv => 'Cv';
+
+  @override
+  String get projects => 'Projects';
 }

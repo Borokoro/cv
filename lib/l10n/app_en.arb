@@ -51,5 +51,7 @@
   "authorSearchDescription": "Simple application that consumes public REST API. It shows user a list of created books by the given author.",
   "portfolioDescription": "My first portfolio was created with Flutter framework. It is using Bloc for state management and firestore for data storage. The code is clean and I made sure that view is fully responsive.",
   "gotToProject": "Go to project",
-  "goToPdfVersion": "Go to PDF version"
+  "goToPdfVersion": "Go to PDF version",
+  "cv": "Cv",
+  "projects": "Projects"
 }

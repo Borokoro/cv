@@ -415,6 +415,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to PDF version'**
   String get goToPdfVersion;
+
+  /// No description provided for @cv.
+  ///
+  /// In en, this message translates to:
+  /// **'Cv'**
+  String get cv;
+
+  /// No description provided for @projects.
+  ///
+  /// In en, this message translates to:
+  /// **'Projects'**
+  String get projects;
 }
 
 class _AppLocalizationsDelegate

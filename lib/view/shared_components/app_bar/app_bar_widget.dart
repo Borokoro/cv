@@ -59,7 +59,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   void _goToProjectsPage(BuildContext context) {
-    AutoRouter.of(context).push(ProjectsRoute());
+    AutoRouter.of(context).navigate(ProjectsRoute());
   }
 
   void _goToCvPage(BuildContext context) {

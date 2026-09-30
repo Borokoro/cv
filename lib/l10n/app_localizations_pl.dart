@@ -181,4 +181,10 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get goToPdfVersion => 'Przejdź do wersji PDF';
+
+  @override
+  String get cv => 'Cv';
+
+  @override
+  String get projects => 'Projekty';
 }

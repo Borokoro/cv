@@ -10,4 +10,5 @@ extension TextThemeExtension on TextTheme {
   TextStyle get fontAppBar => const TextStyle(fontSize: 30, fontWeight: FontWeight.w800);
   TextStyle get fontBigArrows => const TextStyle(fontSize: 50, fontWeight: FontWeight.w800);
   TextStyle get fontHeaderProjects => const TextStyle(fontSize: 100, fontWeight: FontWeight.w700, letterSpacing: 3.0);
+  TextStyle get navigationMenuLabel => const TextStyle(fontSize: 8, fontWeight: FontWeight.w500, height: 1.5);
 }

@@ -52,5 +52,7 @@
   "authorSearchDescription": "Prosta aplikacja korzystająca z publicznego REST API. Wyświetla użytkownikowi listę książek napisanych przez wskazanego autora.",
   "portfolioDescription": "Moje pierwsze portfolio stworzone z wykorzystaniem frameworka Flutter. Do zarządzania stanem wykorzystuje Bloc, a do przechowywania danych Firestore. Kod został napisany z zachowaniem zasad czystości, a widok jest w pełni responsywny.",
   "gotToProject": "Przejdź do projektu",
-  "goToPdfVersion": "Przejdź do wersji PDF"
+  "goToPdfVersion": "Przejdź do wersji PDF",
+  "cv": "Cv",
+  "projects": "Projekty"
 }
