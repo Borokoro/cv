@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cv/constants/app_constants.dart';
 import 'package:cv/constants/assets_constants.dart';
+import 'package:cv/constants/breakpoints.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/icon_constants.dart';
 import 'package:cv/constants/style_constants.dart';
@@ -29,11 +30,15 @@ class CvPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: SafeArea(child: SingleChildScrollView(child: _getCVPageBody(context))),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Breakpoints.isWeb(context) ? _getCVPageBodyWeb(context) : _getCVPageBodyMobile(context),
+        ),
+      ),
     );
   }
 
-  Widget _getCVPageBody(BuildContext context) {
+  Widget _getCVPageBodyWeb(BuildContext context) {
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +46,15 @@ class CvPage extends StatelessWidget {
           Flexible(flex: 1, child: _getPersonalInformationBody(context)),
           Flexible(flex: 3, child: _getExperienceBody(context)),
         ],
+      ),
+    );
+  }
+
+  Widget _getCVPageBodyMobile(BuildContext context) {
+    return IntrinsicHeight(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [_getPersonalInformationBody(context), _getExperienceBody(context)],
       ),
     );
   }
@@ -63,7 +77,7 @@ class CvPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: StyleConstants.edgeInsetsH40,
+            padding: StyleConstants.edgeInsetsH40B40,
             child: InformationWrapper(
               title: localizations.languages,
               body: _getLanguagesColumn(context),
@@ -182,8 +196,13 @@ class CvPage extends StatelessWidget {
               decoration: TextDecoration.underline,
             ),
             recognizer: TapGestureRecognizer()
-              ..onTap = () =>
-                  launchUrl(Uri(scheme: "https", host: StringUtils.emptyString, path: StringUtils.removeHttpsFromLink(AppConstants.universityLink))),
+              ..onTap = () => launchUrl(
+                Uri(
+                  scheme: "https",
+                  host: StringUtils.emptyString,
+                  path: StringUtils.removeHttpsFromLink(AppConstants.universityLink),
+                ),
+              ),
           ),
           TextSpan(
             text: StringUtils.space + localizations.introductionPart2,
@@ -258,11 +277,23 @@ class CvPage extends StatelessWidget {
   }
 
   Widget _getSkillAndPdfLink(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [_getSkill(), _getPdfLink(context)],
-    );
+    final bool isWeb = Breakpoints.isWeb(context);
+
+    if(isWeb) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [_getSkill(), _getPdfLink(context)],
+      );
+    }
+    else {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          _getSkill(), _getPdfLink(context),
+        ].withVerticalElementsSpacing(40),
+      );
+    }
   }
 
   Widget _getSkill() {
@@ -288,16 +319,18 @@ class CvPage extends StatelessWidget {
           fontFamily: AppConstants.defaultFont,
         ),
         recognizer: TapGestureRecognizer()
-          ..onTap = () => launchUrl(Uri(path: _getPathToPdfFile(AssetsConstants.cvPdfVersion)), webViewConfiguration: WebViewConfiguration()),
+          ..onTap = () => launchUrl(
+            Uri(path: _getPathToPdfFile(AssetsConstants.cvPdfVersion)),
+            webViewConfiguration: WebViewConfiguration(),
+          ),
       ),
     );
   }
 
   String _getPathToPdfFile(String text) {
-    if(foundation.kReleaseMode) {
+    if (foundation.kReleaseMode) {
       return StringUtils.assets + text;
-    }
-    else {
+    } else {
       return text;
     }
   }

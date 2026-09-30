@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:cv/constants/breakpoints.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/style_constants.dart';
 import 'package:cv/cubits/language/language_cubit.dart';
@@ -23,6 +24,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isWeb = Breakpoints.isWeb(context);
     return AppBar(
       automaticallyImplyLeading: false,
       elevation: 0,
@@ -32,9 +34,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: StyleConstants.edgeInsetsH20,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: isWeb ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end,
           children: [
-            Transform.translate(offset: const Offset(0, 3), child: _getLeadingWidget(context)),
+            if(isWeb) ...{
+              Transform.translate(offset: const Offset(0, 3), child: _getLeadingWidget(context)),
+            },
             Transform.translate(offset: const Offset(0, 5), child: _getLanguageChange(context)),
           ],
         ),
