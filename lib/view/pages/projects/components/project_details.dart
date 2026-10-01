@@ -1,4 +1,5 @@
 import 'package:cv/constants/app_constants.dart';
+import 'package:cv/constants/breakpoints.dart';
 import 'package:cv/constants/color_constants.dart';
 import 'package:cv/constants/style_constants.dart';
 import 'package:cv/l10n/app_localizations.dart';
@@ -16,23 +17,50 @@ class ProjectDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(Breakpoints.isWeb(context)){
+      return _getProjectDetailsWebView(context);
+    }
+    else {
+      return _getProjectDetailsMobileView(context);
+    }
+  }
+
+  Widget _getProjectDetailsWebView(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Flexible(flex: 2, child: _getTitleAndDescription(context)),
+        Flexible(flex: 2, child: _getTitleAndDescriptionWeb(context)),
         Flexible(flex: 1, child: _getPhotoAndLink(context)),
       ],
     );
   }
 
-  Widget _getTitleAndDescription(BuildContext context) {
+  Widget _getProjectDetailsMobileView(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          _getTitleAndDescriptionMobile(context),
+          _getLink(context),
+        ].withVerticalElementsSpacing(40),
+      ),
+    );
+  }
+
+  Widget _getTitleAndDescriptionWeb(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [_getTitle(context), Expanded(child: SingleChildScrollView(child: _getDescription(context)))].withVerticalElementsSpacing(20),
       ),
+    );
+  }
+
+  Widget _getTitleAndDescriptionMobile(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [_getTitle(context), _getDescription(context)].withVerticalElementsSpacing(20),
     );
   }
 
