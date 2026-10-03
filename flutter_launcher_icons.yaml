@@ -1,0 +1,7 @@
+# flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  web:
+    generate: true
+    image_path: "assets/cv/my_photo.jpg"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
