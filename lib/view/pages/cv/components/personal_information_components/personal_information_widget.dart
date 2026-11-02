@@ -10,23 +10,29 @@ import 'package:url_launcher/url_launcher.dart';
 class PersonalInformationWidget extends StatelessWidget {
   const PersonalInformationWidget({
     super.key,
-    required this.icon,
     required this.title,
     required this.description,
+    this.icon,
     this.isDescriptionLink = false,
     this.isDescriptionEmail = false,
+    this.link,
     this.description2,
   });
 
-  final IconData icon;
+  final IconData? icon;
   final String title;
   final String description;
   final bool isDescriptionLink;
   final bool isDescriptionEmail;
+  final String? link;
   final String? description2;
 
   @override
   Widget build(BuildContext context) {
+    if (icon == null) {
+      return SizedBox(width: double.infinity, child: _getPersonalInformationBody(context));
+    }
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -56,13 +62,15 @@ class PersonalInformationWidget extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     if (isDescriptionLink) {
+      final String target = link ?? description;
+
       return RichText(
         text: TextSpan(
           children: [
             TextSpan(
               text: description,
               style: textTheme.fontRegular.copyWith(
-                color: ColorConstants.linkBlue,
+                color: ColorConstants.black,
                 fontFamily: AppConstants.defaultFont,
               ),
               recognizer: TapGestureRecognizer()
@@ -70,7 +78,7 @@ class PersonalInformationWidget extends StatelessWidget {
                   Uri(
                     scheme: isDescriptionEmail ? 'mailto' : 'https',
                     host: isDescriptionEmail ? null : StringUtils.emptyString,
-                    path: isDescriptionEmail ? description : StringUtils.removeHttpsFromLink(description),
+                    path: isDescriptionEmail ? target : StringUtils.removeHttpsFromLink(target),
                   ),
                 ),
             ),

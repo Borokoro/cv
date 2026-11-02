@@ -9,17 +9,15 @@ class AppLocalizationsPl extends AppLocalizations {
   AppLocalizationsPl([String locale = 'pl']) : super(locale);
 
   @override
-  String get introductionPart1 => 'Jestem absolwentem informatyki';
+  String get summaryPart1 =>
+      'Programista Flutter z ponad 3-letnim praktycznym doświadczeniem w tworzeniu wieloplatformowych aplikacji na iOS i Androida – od projektów uczelnianych i staży po stanowisko Junior Flutter Developera w Ball Squad. Piszę kod w Darcie zorganizowany warstwowo w duchu Clean Architecture, zarządzam stanem za pomocą BLoC/Cubit oraz korzystam ze wstrzykiwania zależności (get_it) i generowania kodu (build_runner).';
+
+  @override
+  String get summaryPart2 =>
+      'Na co dzień pracuję z agentami AI, głównie z Claude i Claude Code, aby przyspieszyć implementację, refaktoryzację, pisanie testów i code review, zachowując przy tym odpowiedzialność za jakość kodu. Mam tytuł magistra informatyki i chcę rozwijać się przy międzynarodowych projektach dla klientów, ucząc się od doświadczonych tech leadów i dzieląc się wiedzą z zespołem.';
 
   @override
   String get university => 'Politechnika Lubelska';
-
-  @override
-  String get universityInflected => 'Politechniki Lubelskiej';
-
-  @override
-  String get introductionPart2 =>
-      'i interesuję się tworzeniem oprogramowania. Mam doświadczenie w tworzeniu aplikacji wieloplatformowych z wykorzystaniem frameworka Flutter i chętnie rozwijam swoje umiejętności, poznając nowe technologie. Motywuje mnie ciągła nauka i zdobywanie praktycznego doświadczenia, a moim celem jest nieustanne doskonalenie swoich umiejętności technicznych. Chętnie podejmuję współpracę z nowymi osobami, stawiam czoła nowym wyzwaniom i rozwijam się jako programista.';
 
   @override
   String get workExperience => 'Doświadczenie zawodowe';
@@ -31,6 +29,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get lublin => 'Lublin';
 
   @override
+  String get lodz => 'Łódź';
+
+  @override
   String get polytechnicsInternDetails =>
       'Obowiązkowa praktyka zawodowa zorganizowana przez Politechnikę, z dużym naciskiem na technologię Flutter.';
 
@@ -38,19 +39,47 @@ class AppLocalizationsPl extends AppLocalizations {
   String get flutter => 'Flutter';
 
   @override
+  String get flutterDeveloper => 'Programista Flutter';
+
+  @override
   String get flutterIntern => 'Stażysta Flutter';
+
+  @override
+  String get mapMaker => 'MapMaker.online';
+
+  @override
+  String get mapMakerDetails1 =>
+      'Tworzenie od podstaw wieloplatformowej aplikacji mobilnej we Flutterze jako jedyny programista.';
+
+  @override
+  String get mapMakerDetails2 =>
+      'Pełna odpowiedzialność za aplikację: architektura, stos technologiczny, implementacja i wydania.';
+
+  @override
+  String get mapMakerDetails3 =>
+      'Samodzielna organizacja pracy: planowanie, priorytetyzowanie i niezależne dostarczanie funkcjonalności.';
+
+  @override
+  String get mapMakerDetails4 =>
+      'Odpowiedzialność za jakość kodu, testy i stabilność produktu od początku do końca.';
 
   @override
   String get paidwork => 'Paidwork';
 
   @override
-  String get paidworkInternDetails => 'Staż w Flutterze w firmie Paidwork.';
+  String get paidworkInternDetails =>
+      'Rozwijanie funkcjonalności we Flutterze w komercyjnej aplikacji mobilnej, w zespole pracującym z Gitem.';
 
   @override
   String get ballSquad => 'Ball Squad';
 
   @override
-  String get ballSquadInternDetails => 'Staż w Flutterze w firmie Ball Squad.';
+  String get ballSquadInternDetails1 =>
+      'Implementacja ekranów UI na podstawie projektów z Figmy i łączenie ich z usługami backendowymi.';
+
+  @override
+  String get ballSquadInternDetails2 =>
+      'Poznanie architektury i sposobu pracy zespołu, co zaowocowało stanowiskiem juniora.';
 
   @override
   String get warsaw => 'Warszawa';
@@ -59,8 +88,24 @@ class AppLocalizationsPl extends AppLocalizations {
   String get flutterJunior => 'Młodszy programista Flutter';
 
   @override
-  String get ballSquadJuniorDetails =>
-      'Młodszy programista w Flutterze w firmie Ball Squad.';
+  String get ballSquadJuniorDetails1 =>
+      'Tworzenie i utrzymywanie funkcjonalności wieloplatformowej aplikacji Flutter na iOS i Androida.';
+
+  @override
+  String get ballSquadJuniorDetails2 =>
+      'Zarządzanie stanem za pomocą BLoC/Cubit, architektura warstwowa ze wstrzykiwaniem zależności przez get_it.';
+
+  @override
+  String get ballSquadJuniorDetails3 =>
+      'Integracja z REST API przy użyciu Dio, nawigacja z auto_route, generowanie kodu z build_runner.';
+
+  @override
+  String get ballSquadJuniorDetails4 =>
+      'Praca zespołowa w metodyce Agile z Jirą, code review w Bitbucket i UI budowane na podstawie projektów z Figmy.';
+
+  @override
+  String get ballSquadJuniorDetails5 =>
+      'Wykorzystanie Claude Code jako agenta AI do implementacji, refaktoryzacji i testów.';
 
   @override
   String get educationAndQualifications => 'Wykształcenie i kwalifikacje';
@@ -84,40 +129,49 @@ class AppLocalizationsPl extends AppLocalizations {
   String get dateOfBirth => 'Data urodzenia';
 
   @override
-  String get placeOfBirth => 'Miejsce urodzenia';
-
-  @override
-  String get gender => 'Płeć';
-
-  @override
-  String get nationality => 'Narodowość';
-
-  @override
   String get github => 'Github';
 
   @override
   String get linkedIn => 'LinkedIn';
 
   @override
+  String get onlineCvAndPortfolio => 'CV online i portfolio';
+
+  @override
   String get hetmanska => 'Hetmańska';
-
-  @override
-  String get poland => 'Polska';
-
-  @override
-  String get male => 'Mężczyzna';
 
   @override
   String get english => 'Angielski';
 
   @override
-  String get polish => 'Polski';
+  String get polish => 'Polski (ojczysty)';
 
   @override
   String get personal => 'Dane osobowe';
 
   @override
   String get languages => 'Języki';
+
+  @override
+  String get skills => 'Umiejętności';
+
+  @override
+  String get skillCategoryMobile => 'Mobile';
+
+  @override
+  String get skillCategoryArchitectureAndState => 'Architektura i stan';
+
+  @override
+  String get skillCategoryAiTools => 'Narzędzia AI';
+
+  @override
+  String get skillCategoryDataAndNetworking => 'Dane i sieć';
+
+  @override
+  String get skillCategoryTools => 'Narzędzia';
+
+  @override
+  String get unitAndWidgetTests => 'Testy jednostkowe i widgetów';
 
   @override
   String get present => 'Obecnie';

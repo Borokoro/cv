@@ -10,8 +10,8 @@ class SkillWidget extends StatelessWidget {
   final Skill skill;
   final double? width;
 
-  static const double _circleWidth = 20;
-  static const double _circleHeight = 20;
+  static const double _circleWidth = 16;
+  static const double _circleHeight = 16;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class SkillWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _getSkillName(context),
+          Flexible(child: _getSkillName(context)),
           _getSkillLevel(context),
-        ],
+        ].withHorizontalElementsSpacing(10),
       ),
     );
   }

@@ -10,11 +10,12 @@ class PersonalInformation {
   final String phoneNumber;
   final String email;
   final String formattedDateOfBirth;
-  final String placeOfBirth;
-  final String gender;
-  final String nationality;
   final String github;
+  final String githubLabel;
   final String linkedIn;
+  final String linkedInLabel;
+  final String onlineCv;
+  final String onlineCvLabel;
 
   PersonalInformation({
     required this.addressStreet,
@@ -23,11 +24,12 @@ class PersonalInformation {
     required this.phoneNumber,
     required this.email,
     required this.formattedDateOfBirth,
-    required this.placeOfBirth,
-    required this.gender,
-    required this.nationality,
     required this.github,
+    required this.githubLabel,
     required this.linkedIn,
+    required this.linkedInLabel,
+    required this.onlineCv,
+    required this.onlineCvLabel,
   });
 
   factory PersonalInformation.getMyPersonalInformation(AppLocalizations localizations) {
@@ -41,11 +43,12 @@ class PersonalInformation {
         AppConstants.dateFormatDayMonthYearDashed,
         PersonalInformationConstants.dateOfBirth,
       ).toString(),
-      placeOfBirth: localizations.lublin,
-      gender: localizations.male,
-      nationality: localizations.poland,
       github: PersonalInformationConstants.github,
+      githubLabel: PersonalInformationConstants.githubLabel,
       linkedIn: PersonalInformationConstants.linkedIn,
+      linkedInLabel: PersonalInformationConstants.linkedInLabel,
+      onlineCv: PersonalInformationConstants.onlineCv,
+      onlineCvLabel: PersonalInformationConstants.onlineCvLabel,
     );
   }
 }

@@ -2,6 +2,7 @@ abstract class StringUtils {
   static const String space = " ";
   static const String emptyString = "";
   static const String longDash = '—';
+  static const String dash = '-';
   static const String comma = ",";
   static const String https = "https://";
   static const String greaterThan = ">";

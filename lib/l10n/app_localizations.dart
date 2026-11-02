@@ -98,29 +98,23 @@ abstract class AppLocalizations {
     Locale('pl'),
   ];
 
-  /// No description provided for @introductionPart1.
+  /// No description provided for @summaryPart1.
   ///
   /// In en, this message translates to:
-  /// **'I am a Computer Science graduate from'**
-  String get introductionPart1;
+  /// **'Flutter developer with over 3 years of hands-on experience building cross-platform iOS and Android apps, from university projects and internships to a Junior Flutter Developer role at Ball Squad. I write Dart code organised in layers in the spirit of Clean Architecture, manage state with BLoC/Cubit and rely on dependency injection (get_it) and code generation (build_runner).'**
+  String get summaryPart1;
+
+  /// No description provided for @summaryPart2.
+  ///
+  /// In en, this message translates to:
+  /// **'I work daily with AI agents, mainly Claude and Claude Code, to speed up implementation, refactoring, writing tests and code review, while keeping responsibility for code quality. I hold an MSc in Computer Science and I want to grow on international client projects, learning from experienced tech leads and sharing knowledge with the team.'**
+  String get summaryPart2;
 
   /// No description provided for @university.
   ///
   /// In en, this message translates to:
   /// **'Lublin University of Technology'**
   String get university;
-
-  /// No description provided for @universityInflected.
-  ///
-  /// In en, this message translates to:
-  /// **'Lublin University of Technology'**
-  String get universityInflected;
-
-  /// No description provided for @introductionPart2.
-  ///
-  /// In en, this message translates to:
-  /// **'with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.'**
-  String get introductionPart2;
 
   /// No description provided for @workExperience.
   ///
@@ -140,10 +134,16 @@ abstract class AppLocalizations {
   /// **'Lublin'**
   String get lublin;
 
+  /// No description provided for @lodz.
+  ///
+  /// In en, this message translates to:
+  /// **'Łódź'**
+  String get lodz;
+
   /// No description provided for @polytechnicsInternDetails.
   ///
   /// In en, this message translates to:
-  /// **'Mandatory internship organized by polytechnic with strong focus on Flutter.'**
+  /// **'Mandatory internship organized by the polytechnic with a strong focus on Flutter.'**
   String get polytechnicsInternDetails;
 
   /// No description provided for @flutter.
@@ -152,11 +152,47 @@ abstract class AppLocalizations {
   /// **'Flutter'**
   String get flutter;
 
+  /// No description provided for @flutterDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Developer'**
+  String get flutterDeveloper;
+
   /// No description provided for @flutterIntern.
   ///
   /// In en, this message translates to:
   /// **'Flutter Intern'**
   String get flutterIntern;
+
+  /// No description provided for @mapMaker.
+  ///
+  /// In en, this message translates to:
+  /// **'MapMaker.online'**
+  String get mapMaker;
+
+  /// No description provided for @mapMakerDetails1.
+  ///
+  /// In en, this message translates to:
+  /// **'Building a cross-platform Flutter mobile app from scratch as the sole developer.'**
+  String get mapMakerDetails1;
+
+  /// No description provided for @mapMakerDetails2.
+  ///
+  /// In en, this message translates to:
+  /// **'Full ownership of the app: architecture, tech stack, implementation and releases.'**
+  String get mapMakerDetails2;
+
+  /// No description provided for @mapMakerDetails3.
+  ///
+  /// In en, this message translates to:
+  /// **'Self-managed work: planning, prioritising and delivering features independently.'**
+  String get mapMakerDetails3;
+
+  /// No description provided for @mapMakerDetails4.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsible for code quality, testing and stability of the product end to end.'**
+  String get mapMakerDetails4;
 
   /// No description provided for @paidwork.
   ///
@@ -167,7 +203,7 @@ abstract class AppLocalizations {
   /// No description provided for @paidworkInternDetails.
   ///
   /// In en, this message translates to:
-  /// **'Flutter internship at Paidwork company.'**
+  /// **'Developed Flutter features in a commercial mobile app within a Git-based team workflow.'**
   String get paidworkInternDetails;
 
   /// No description provided for @ballSquad.
@@ -176,11 +212,17 @@ abstract class AppLocalizations {
   /// **'Ball Squad'**
   String get ballSquad;
 
-  /// No description provided for @ballSquadInternDetails.
+  /// No description provided for @ballSquadInternDetails1.
   ///
   /// In en, this message translates to:
-  /// **'Flutter internship at Ball Squad Company.'**
-  String get ballSquadInternDetails;
+  /// **'Implemented UI screens from Figma and connected them to backend services.'**
+  String get ballSquadInternDetails1;
+
+  /// No description provided for @ballSquadInternDetails2.
+  ///
+  /// In en, this message translates to:
+  /// **'Learned the team\'s architecture and workflow, which led to a junior role.'**
+  String get ballSquadInternDetails2;
 
   /// No description provided for @warsaw.
   ///
@@ -191,14 +233,38 @@ abstract class AppLocalizations {
   /// No description provided for @flutterJunior.
   ///
   /// In en, this message translates to:
-  /// **'Flutter Junior'**
+  /// **'Junior Flutter Developer'**
   String get flutterJunior;
 
-  /// No description provided for @ballSquadJuniorDetails.
+  /// No description provided for @ballSquadJuniorDetails1.
   ///
   /// In en, this message translates to:
-  /// **'Junior Flutter Developer at Ball Squad Company.'**
-  String get ballSquadJuniorDetails;
+  /// **'Building and maintaining features of a cross-platform Flutter app for iOS and Android.'**
+  String get ballSquadJuniorDetails1;
+
+  /// No description provided for @ballSquadJuniorDetails2.
+  ///
+  /// In en, this message translates to:
+  /// **'State management with BLoC/Cubit, layered architecture with get_it dependency injection.'**
+  String get ballSquadJuniorDetails2;
+
+  /// No description provided for @ballSquadJuniorDetails3.
+  ///
+  /// In en, this message translates to:
+  /// **'REST API integration with Dio, navigation with auto_route, code generation with build_runner.'**
+  String get ballSquadJuniorDetails3;
+
+  /// No description provided for @ballSquadJuniorDetails4.
+  ///
+  /// In en, this message translates to:
+  /// **'Agile teamwork with Jira, code reviews in Bitbucket and UI built from Figma designs.'**
+  String get ballSquadJuniorDetails4;
+
+  /// No description provided for @ballSquadJuniorDetails5.
+  ///
+  /// In en, this message translates to:
+  /// **'Using Claude Code as an AI agent for implementation, refactoring and tests.'**
+  String get ballSquadJuniorDetails5;
 
   /// No description provided for @educationAndQualifications.
   ///
@@ -242,24 +308,6 @@ abstract class AppLocalizations {
   /// **'Date of birth'**
   String get dateOfBirth;
 
-  /// No description provided for @placeOfBirth.
-  ///
-  /// In en, this message translates to:
-  /// **'Place of birth'**
-  String get placeOfBirth;
-
-  /// No description provided for @gender.
-  ///
-  /// In en, this message translates to:
-  /// **'Gender'**
-  String get gender;
-
-  /// No description provided for @nationality.
-  ///
-  /// In en, this message translates to:
-  /// **'Nationality'**
-  String get nationality;
-
   /// No description provided for @github.
   ///
   /// In en, this message translates to:
@@ -272,23 +320,17 @@ abstract class AppLocalizations {
   /// **'LinkedIn'**
   String get linkedIn;
 
+  /// No description provided for @onlineCvAndPortfolio.
+  ///
+  /// In en, this message translates to:
+  /// **'Online CV & portfolio'**
+  String get onlineCvAndPortfolio;
+
   /// No description provided for @hetmanska.
   ///
   /// In en, this message translates to:
   /// **'Hetmanska'**
   String get hetmanska;
-
-  /// No description provided for @poland.
-  ///
-  /// In en, this message translates to:
-  /// **'Poland'**
-  String get poland;
-
-  /// No description provided for @male.
-  ///
-  /// In en, this message translates to:
-  /// **'Male'**
-  String get male;
 
   /// No description provided for @english.
   ///
@@ -299,7 +341,7 @@ abstract class AppLocalizations {
   /// No description provided for @polish.
   ///
   /// In en, this message translates to:
-  /// **'Polish'**
+  /// **'Polish (native)'**
   String get polish;
 
   /// No description provided for @personal.
@@ -313,6 +355,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Languages'**
   String get languages;
+
+  /// No description provided for @skills.
+  ///
+  /// In en, this message translates to:
+  /// **'Skills'**
+  String get skills;
+
+  /// No description provided for @skillCategoryMobile.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile'**
+  String get skillCategoryMobile;
+
+  /// No description provided for @skillCategoryArchitectureAndState.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture & state'**
+  String get skillCategoryArchitectureAndState;
+
+  /// No description provided for @skillCategoryAiTools.
+  ///
+  /// In en, this message translates to:
+  /// **'AI tools'**
+  String get skillCategoryAiTools;
+
+  /// No description provided for @skillCategoryDataAndNetworking.
+  ///
+  /// In en, this message translates to:
+  /// **'Data & networking'**
+  String get skillCategoryDataAndNetworking;
+
+  /// No description provided for @skillCategoryTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get skillCategoryTools;
+
+  /// No description provided for @unitAndWidgetTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit & widget tests'**
+  String get unitAndWidgetTests;
 
   /// No description provided for @present.
   ///

@@ -7,6 +7,7 @@ import 'package:cv/utils/elements_spacing_extension.dart';
 import 'package:cv/utils/formatted_utc_date_time.dart';
 import 'package:cv/utils/string_utils.dart';
 import 'package:cv/utils/text_theme_extension.dart';
+import 'package:cv/view/pages/cv/components/experience_components/bullet_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class ExperienceWidget extends StatelessWidget {
@@ -16,14 +17,14 @@ class ExperienceWidget extends StatelessWidget {
     required this.endDate,
     required this.title,
     required this.place,
-    this.description,
+    this.descriptionPoints = const [],
   });
 
   final DateTime startDate;
   final DateTime? endDate;
   final String title;
   final String place;
-  final String? description;
+  final List<String> descriptionPoints;
   final LanguageCubit _languageCubit = serviceLocator.get<LanguageCubit>();
 
   @override
@@ -43,7 +44,7 @@ class ExperienceWidget extends StatelessWidget {
       children: [
         _getTitle(context),
         _getPlace(context),
-        if (description != null) ...{SizedBox(height: 5), _getDescription(context), SizedBox(height: 5)},
+        if (descriptionPoints.isNotEmpty) ...{const SizedBox(height: 5), BulletListWidget(points: descriptionPoints)},
       ].withVerticalElementsSpacing(5),
     );
   }
@@ -58,12 +59,6 @@ class ExperienceWidget extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Text(place, style: textTheme.fontRegular.copyWith(color: ColorConstants.purplish));
-  }
-
-  Widget _getDescription(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
-
-    return Text(description!, style: textTheme.fontRegular);
   }
 
   Widget _getExperienceDate(BuildContext context) {
@@ -84,7 +79,7 @@ class ExperienceWidget extends StatelessWidget {
         : localizations.present;
 
     return Text(
-      formattedStartDate + StringUtils.space + StringUtils.longDash + StringUtils.space + formattedEndDate,
+      formattedStartDate + StringUtils.space + StringUtils.dash + StringUtils.space + formattedEndDate,
       style: textTheme.fontRegular,
     );
   }

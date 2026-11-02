@@ -3,10 +3,10 @@ import 'package:cv/constants/app_constants.dart';
 import 'package:cv/constants/assets_constants.dart';
 import 'package:cv/constants/breakpoints.dart';
 import 'package:cv/constants/color_constants.dart';
-import 'package:cv/constants/icon_constants.dart';
 import 'package:cv/constants/style_constants.dart';
 import 'package:cv/l10n/app_localizations.dart';
 import 'package:cv/types/enum/skill.dart';
+import 'package:cv/types/enum/skill_category.dart';
 import 'package:cv/types/models/personal_information.dart';
 import 'package:cv/utils/elements_spacing_extension.dart';
 import 'package:cv/utils/string_utils.dart';
@@ -15,7 +15,8 @@ import 'package:cv/view/pages/cv/components/experience_components/experience_wid
 import 'package:cv/view/pages/cv/components/information_wrapper.dart';
 import 'package:cv/view/pages/cv/components/personal_information_components/name_and_photo_widget.dart';
 import 'package:cv/view/pages/cv/components/personal_information_components/personal_information_widget.dart';
-import 'package:cv/view/pages/cv/components/skill_widget.dart';
+import 'package:cv/view/pages/cv/components/skill_components/skill_category_widget.dart';
+import 'package:cv/view/pages/cv/components/skill_components/skill_widget.dart';
 import 'package:cv/view/shared_components/app_bar/app_bar_widget.dart';
 import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/gestures.dart';
@@ -44,7 +45,7 @@ class CvPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(flex: 1, child: _getPersonalInformationBody(context)),
-          Flexible(flex: 3, child: _getExperienceBody(context)),
+          Flexible(flex: 2, child: _getExperienceBody(context)),
         ],
       ),
     );
@@ -67,7 +68,7 @@ class CvPage extends StatelessWidget {
       color: ColorConstants.brightGray,
       child: Column(
         children: [
-          NameAndPhotoWidget(),
+          const NameAndPhotoWidget(),
           Padding(
             padding: StyleConstants.edgeInsetsH40,
             child: InformationWrapper(
@@ -77,10 +78,18 @@ class CvPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: StyleConstants.edgeInsetsH40B40,
+            padding: StyleConstants.edgeInsetsH40,
             child: InformationWrapper(
               title: localizations.languages,
-              body: _getLanguagesColumn(context),
+              body: _getLanguagesColumn(),
+              textStyle: textTheme.fontHeader,
+            ),
+          ),
+          Padding(
+            padding: StyleConstants.edgeInsetsH40B40,
+            child: InformationWrapper(
+              title: localizations.skills,
+              body: _getSkillsColumn(),
               textStyle: textTheme.fontHeader,
             ),
           ),
@@ -92,61 +101,61 @@ class CvPage extends StatelessWidget {
   Widget _getPersonalInformationColumn(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final PersonalInformation pi = PersonalInformation.getMyPersonalInformation(localizations);
+
     return Column(
       children: [
         PersonalInformationWidget(
-          icon: IconConstants.address,
           title: localizations.address,
-          description: pi.addressStreet,
-          description2: "${pi.addressPostalCode} ${pi.city}",
+          description: StringUtils.addCommaAtEnd(pi.addressStreet) + pi.addressPostalCode + StringUtils.space + pi.city,
         ),
+        PersonalInformationWidget(title: localizations.phoneNumber, description: pi.phoneNumber),
         PersonalInformationWidget(
-          icon: IconConstants.phone,
-          title: localizations.phoneNumber,
-          description: pi.phoneNumber,
-        ),
-        PersonalInformationWidget(
-          icon: IconConstants.email,
           title: localizations.email,
           description: pi.email,
           isDescriptionEmail: true,
           isDescriptionLink: true,
         ),
+        PersonalInformationWidget(title: localizations.dateOfBirth, description: pi.formattedDateOfBirth),
         PersonalInformationWidget(
-          icon: IconConstants.dateOfBirth,
-          title: localizations.dateOfBirth,
-          description: pi.formattedDateOfBirth,
-        ),
-        PersonalInformationWidget(
-          icon: IconConstants.placeOfBirth,
-          title: localizations.placeOfBirth,
-          description: pi.placeOfBirth,
-        ),
-        PersonalInformationWidget(icon: IconConstants.gender, title: localizations.gender, description: pi.gender),
-        PersonalInformationWidget(
-          icon: IconConstants.nationality,
-          title: localizations.nationality,
-          description: pi.nationality,
-        ),
-        PersonalInformationWidget(
-          icon: IconConstants.github,
           title: localizations.github,
-          description: pi.github,
+          description: pi.githubLabel,
+          link: pi.github,
           isDescriptionLink: true,
         ),
         PersonalInformationWidget(
-          icon: IconConstants.linkedin,
           title: localizations.linkedIn,
-          description: pi.linkedIn,
+          description: pi.linkedInLabel,
+          link: pi.linkedIn,
           isDescriptionLink: true,
         ),
-      ].withVerticalElementsSpacing(15),
+        PersonalInformationWidget(
+          title: localizations.onlineCvAndPortfolio,
+          description: pi.onlineCvLabel,
+          link: pi.onlineCv,
+          isDescriptionLink: true,
+        ),
+      ].withVerticalElementsSpacing(10),
     );
   }
 
-  Widget _getLanguagesColumn(BuildContext context) {
+  Widget _getLanguagesColumn() {
+    final List<Skill> languages = Skill.getSkillsByCategory(SkillCategory.language);
+
     return Column(
-      children: [SkillWidget(skill: Skill.english), SkillWidget(skill: Skill.polish)].withVerticalElementsSpacing(15),
+      children: [for (Skill language in languages) SkillWidget(skill: language)].withVerticalElementsSpacing(10),
+    );
+  }
+
+  Widget _getSkillsColumn() {
+    final List<SkillCategory> categories = SkillCategory.values
+        .where((SkillCategory category) => category != SkillCategory.language)
+        .toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (SkillCategory category in categories) SkillCategoryWidget(category: category),
+      ].withVerticalElementsSpacing(20),
     );
   }
 
@@ -160,19 +169,21 @@ class CvPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _getAboutMe(context),
-          InformationWrapper(
-            title: localizations.workExperience,
-            body: _getWorkExperience(context),
-            textStyle: textTheme.fontHeader,
-          ),
-          InformationWrapper(
-            title: localizations.educationAndQualifications,
-            body: _getEducation(context),
-            textStyle: textTheme.fontHeader,
-          ),
-          _getSkillAndPdfLink(context),
-        ].withDivider(const Divider()).withVerticalElementsSpacing(20),
+          ...[
+            _getAboutMe(context),
+            InformationWrapper(
+              title: localizations.workExperience,
+              body: _getWorkExperience(context),
+              textStyle: textTheme.fontHeader,
+            ),
+            InformationWrapper(
+              title: localizations.educationAndQualifications,
+              body: _getEducation(context),
+              textStyle: textTheme.fontHeader,
+            ),
+          ].withDivider(const Divider()),
+          Align(alignment: Alignment.centerRight, child: _getPdfLink(context)),
+        ].withVerticalElementsSpacing(20),
       ),
     );
   }
@@ -181,35 +192,13 @@ class CvPage extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: localizations.introductionPart1 + StringUtils.space,
-            style: textTheme.fontRegular.copyWith(color: ColorConstants.black, fontFamily: AppConstants.defaultFont),
-          ),
-          TextSpan(
-            text: localizations.universityInflected,
-            style: textTheme.fontRegularBold.copyWith(
-              color: ColorConstants.linkBlue,
-              fontFamily: AppConstants.defaultFont,
-              decoration: TextDecoration.underline,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launchUrl(
-                Uri(
-                  scheme: "https",
-                  host: StringUtils.emptyString,
-                  path: StringUtils.removeHttpsFromLink(AppConstants.universityLink),
-                ),
-              ),
-          ),
-          TextSpan(
-            text: StringUtils.space + localizations.introductionPart2,
-            style: textTheme.fontRegular.copyWith(color: ColorConstants.black, fontFamily: AppConstants.defaultFont),
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(localizations.flutterDeveloper, style: textTheme.fontJobTitle.copyWith(color: ColorConstants.purplish)),
+        Text(localizations.summaryPart1, style: textTheme.fontRegular),
+        Text(localizations.summaryPart2, style: textTheme.fontRegular),
+      ].withVerticalElementsSpacing(10),
     );
   }
 
@@ -220,34 +209,52 @@ class CvPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ExperienceWidget(
-          startDate: DateTime.utc(2022, 7),
-          endDate: DateTime.utc(2022, 9),
-          title: localizations.polytechnicsInternship,
-          place: _getPlaceString(localizations.university, localizations.lublin),
-          description: localizations.polytechnicsInternDetails,
+          startDate: DateTime.utc(2026, 10),
+          endDate: null,
+          title: localizations.flutterDeveloper,
+          place: _getPlaceString(localizations.mapMaker, localizations.lodz),
+          descriptionPoints: [
+            localizations.mapMakerDetails1,
+            localizations.mapMakerDetails2,
+            localizations.mapMakerDetails3,
+            localizations.mapMakerDetails4,
+          ],
         ),
         ExperienceWidget(
-          startDate: DateTime.utc(2023, 10),
-          endDate: DateTime.utc(2023, 12),
-          title: localizations.flutterIntern,
-          place: _getPlaceString(localizations.paidwork, localizations.lublin),
-          description: localizations.paidworkInternDetails,
+          startDate: DateTime.utc(2025, 5),
+          endDate: DateTime.utc(2026, 8),
+          title: localizations.flutterJunior,
+          place: _getPlaceString(localizations.ballSquad, localizations.warsaw),
+          descriptionPoints: [
+            localizations.ballSquadJuniorDetails1,
+            localizations.ballSquadJuniorDetails2,
+            localizations.ballSquadJuniorDetails3,
+            localizations.ballSquadJuniorDetails4,
+            localizations.ballSquadJuniorDetails5,
+          ],
         ),
         ExperienceWidget(
           startDate: DateTime.utc(2024, 9),
           endDate: DateTime.utc(2025, 5),
           title: localizations.flutterIntern,
           place: _getPlaceString(localizations.ballSquad, localizations.warsaw),
-          description: localizations.ballSquadInternDetails,
+          descriptionPoints: [localizations.ballSquadInternDetails1, localizations.ballSquadInternDetails2],
         ),
         ExperienceWidget(
-          startDate: DateTime.utc(2025, 5),
-          endDate: null,
-          title: localizations.flutterJunior,
-          place: _getPlaceString(localizations.ballSquad, localizations.warsaw),
-          description: localizations.ballSquadJuniorDetails,
+          startDate: DateTime.utc(2023, 10),
+          endDate: DateTime.utc(2023, 12),
+          title: localizations.flutterIntern,
+          place: _getPlaceString(localizations.paidwork, localizations.lublin),
+          descriptionPoints: [localizations.paidworkInternDetails],
         ),
-      ].withVerticalElementsSpacing(10),
+        ExperienceWidget(
+          startDate: DateTime.utc(2022, 7),
+          endDate: DateTime.utc(2022, 9),
+          title: localizations.polytechnicsInternship,
+          place: _getPlaceString(localizations.university, localizations.lublin),
+          descriptionPoints: [localizations.polytechnicsInternDetails],
+        ),
+      ].withVerticalElementsSpacing(20),
     );
   }
 
@@ -261,48 +268,18 @@ class CvPage extends StatelessWidget {
     return Column(
       children: [
         ExperienceWidget(
-          startDate: DateTime.utc(2018, 10),
-          endDate: DateTime.utc(2022, 3),
-          title: localizations.bachelorTitle,
-          place: _getPlaceString(localizations.university, localizations.lublin),
-        ),
-        ExperienceWidget(
           startDate: DateTime.utc(2022, 3),
           endDate: DateTime.utc(2023, 9),
           title: localizations.masterTitle,
           place: _getPlaceString(localizations.university, localizations.lublin),
         ),
-      ].withVerticalElementsSpacing(10),
-    );
-  }
-
-  Widget _getSkillAndPdfLink(BuildContext context) {
-    final bool isWeb = Breakpoints.isWeb(context);
-
-    if(isWeb) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [_getSkill(), _getPdfLink(context)],
-      );
-    }
-    else {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          _getSkill(), _getPdfLink(context),
-        ].withVerticalElementsSpacing(40),
-      );
-    }
-  }
-
-  Widget _getSkill() {
-    final List<Skill> skills = Skill.values.where((Skill skill) => skill.isProgrammingSkill).toList();
-
-    return Column(
-      children: [
-        for (Skill skill in skills) ...{SkillWidget(skill: skill, width: 500)},
-      ].withVerticalElementsSpacing(15),
+        ExperienceWidget(
+          startDate: DateTime.utc(2018, 10),
+          endDate: DateTime.utc(2022, 3),
+          title: localizations.bachelorTitle,
+          place: _getPlaceString(localizations.university, localizations.lublin),
+        ),
+      ].withVerticalElementsSpacing(20),
     );
   }
 

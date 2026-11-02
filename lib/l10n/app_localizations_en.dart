@@ -9,17 +9,15 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get introductionPart1 => 'I am a Computer Science graduate from';
+  String get summaryPart1 =>
+      'Flutter developer with over 3 years of hands-on experience building cross-platform iOS and Android apps, from university projects and internships to a Junior Flutter Developer role at Ball Squad. I write Dart code organised in layers in the spirit of Clean Architecture, manage state with BLoC/Cubit and rely on dependency injection (get_it) and code generation (build_runner).';
+
+  @override
+  String get summaryPart2 =>
+      'I work daily with AI agents, mainly Claude and Claude Code, to speed up implementation, refactoring, writing tests and code review, while keeping responsibility for code quality. I hold an MSc in Computer Science and I want to grow on international client projects, learning from experienced tech leads and sharing knowledge with the team.';
 
   @override
   String get university => 'Lublin University of Technology';
-
-  @override
-  String get universityInflected => 'Lublin University of Technology';
-
-  @override
-  String get introductionPart2 =>
-      'with a strong interest in software development. I have experience in building cross-platform applications using Flutter framework and I am eager to expand my skills by learning new technologies. I am motivated by continuous learning and gaining practical experience, with the goal of constantly improving my technical skills. I look forward to collaborating with new people, taking on new challenges, and growing as a software developer.';
 
   @override
   String get workExperience => 'Work experience';
@@ -31,37 +29,83 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lublin => 'Lublin';
 
   @override
+  String get lodz => 'Łódź';
+
+  @override
   String get polytechnicsInternDetails =>
-      'Mandatory internship organized by polytechnic with strong focus on Flutter.';
+      'Mandatory internship organized by the polytechnic with a strong focus on Flutter.';
 
   @override
   String get flutter => 'Flutter';
 
   @override
+  String get flutterDeveloper => 'Flutter Developer';
+
+  @override
   String get flutterIntern => 'Flutter Intern';
+
+  @override
+  String get mapMaker => 'MapMaker.online';
+
+  @override
+  String get mapMakerDetails1 =>
+      'Building a cross-platform Flutter mobile app from scratch as the sole developer.';
+
+  @override
+  String get mapMakerDetails2 =>
+      'Full ownership of the app: architecture, tech stack, implementation and releases.';
+
+  @override
+  String get mapMakerDetails3 =>
+      'Self-managed work: planning, prioritising and delivering features independently.';
+
+  @override
+  String get mapMakerDetails4 =>
+      'Responsible for code quality, testing and stability of the product end to end.';
 
   @override
   String get paidwork => 'Paidwork';
 
   @override
-  String get paidworkInternDetails => 'Flutter internship at Paidwork company.';
+  String get paidworkInternDetails =>
+      'Developed Flutter features in a commercial mobile app within a Git-based team workflow.';
 
   @override
   String get ballSquad => 'Ball Squad';
 
   @override
-  String get ballSquadInternDetails =>
-      'Flutter internship at Ball Squad Company.';
+  String get ballSquadInternDetails1 =>
+      'Implemented UI screens from Figma and connected them to backend services.';
+
+  @override
+  String get ballSquadInternDetails2 =>
+      'Learned the team\'s architecture and workflow, which led to a junior role.';
 
   @override
   String get warsaw => 'Warsaw';
 
   @override
-  String get flutterJunior => 'Flutter Junior';
+  String get flutterJunior => 'Junior Flutter Developer';
 
   @override
-  String get ballSquadJuniorDetails =>
-      'Junior Flutter Developer at Ball Squad Company.';
+  String get ballSquadJuniorDetails1 =>
+      'Building and maintaining features of a cross-platform Flutter app for iOS and Android.';
+
+  @override
+  String get ballSquadJuniorDetails2 =>
+      'State management with BLoC/Cubit, layered architecture with get_it dependency injection.';
+
+  @override
+  String get ballSquadJuniorDetails3 =>
+      'REST API integration with Dio, navigation with auto_route, code generation with build_runner.';
+
+  @override
+  String get ballSquadJuniorDetails4 =>
+      'Agile teamwork with Jira, code reviews in Bitbucket and UI built from Figma designs.';
+
+  @override
+  String get ballSquadJuniorDetails5 =>
+      'Using Claude Code as an AI agent for implementation, refactoring and tests.';
 
   @override
   String get educationAndQualifications => 'Education and Qualifications';
@@ -85,40 +129,49 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dateOfBirth => 'Date of birth';
 
   @override
-  String get placeOfBirth => 'Place of birth';
-
-  @override
-  String get gender => 'Gender';
-
-  @override
-  String get nationality => 'Nationality';
-
-  @override
   String get github => 'Github';
 
   @override
   String get linkedIn => 'LinkedIn';
 
   @override
+  String get onlineCvAndPortfolio => 'Online CV & portfolio';
+
+  @override
   String get hetmanska => 'Hetmanska';
-
-  @override
-  String get poland => 'Poland';
-
-  @override
-  String get male => 'Male';
 
   @override
   String get english => 'English';
 
   @override
-  String get polish => 'Polish';
+  String get polish => 'Polish (native)';
 
   @override
   String get personal => 'Personal';
 
   @override
   String get languages => 'Languages';
+
+  @override
+  String get skills => 'Skills';
+
+  @override
+  String get skillCategoryMobile => 'Mobile';
+
+  @override
+  String get skillCategoryArchitectureAndState => 'Architecture & state';
+
+  @override
+  String get skillCategoryAiTools => 'AI tools';
+
+  @override
+  String get skillCategoryDataAndNetworking => 'Data & networking';
+
+  @override
+  String get skillCategoryTools => 'Tools';
+
+  @override
+  String get unitAndWidgetTests => 'Unit & widget tests';
 
   @override
   String get present => 'Present';
